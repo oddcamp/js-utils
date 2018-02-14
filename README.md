@@ -15,7 +15,7 @@ A library of ES6 utilities.
     import throttle from "js-utils/src/throttle"
     ```
 
-3. Read the [documentation](#documentation)
+3. Browser [src](https://github.com/kollegorna/js-utils/tree/master/playground) for utilities and their usage examples
 
 ## Development
 
@@ -23,7 +23,3 @@ A library of ES6 utilities.
 2. Run `$ gulp` when developing. This will run the linter for your own good
 3. Edit contents of `src`
 4. Use `playground` to test your code
-
-## Documentation
-
-...
