@@ -15,11 +15,11 @@ A library of ES6 utilities.
     import throttle from "js-utils/src/throttle"
     ```
 
-3. Browser [src](https://github.com/kollegorna/js-utils/tree/master/playground) for utilities and their usage examples
+3. Browse [src](https://github.com/kollegorna/js-utils/tree/master/src) for utilities and [demo](https://github.com/kollegorna/js-utils/tree/master/demo) for their usage examples
 
 ## Development
 
 1. Install dependencies with `$ yarn`
 2. Run `$ gulp` when developing. This will run the linter for your own good
 3. Edit contents of `src`
-4. Use `playground` to test your code
+4. Make sure the corresponding examples on `demo` are updated/added. Do `$ node server.js` to start the server for browsing/testing the demos

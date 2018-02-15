@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</header>
+<body>
+
+	<h1>Events</h1>
+
+	<p>
+		<button class="test" type="button">Go baby!</button>
+		<button class="off" type="button">Off</button>
+	</p>
+
+	<script type="module">
+		import { addEventListener, removeEventListener } from '/src/events.js'
+
+		const btnTest = document.querySelector('.test')
+		const btnOff = document.querySelector('.off')
+
+		addEventListener(btnTest, 'click', () => {
+			alert('a')
+		})
+
+		addEventListener(btnTest, 'click.b', () => {
+			alert('b')
+		})
+
+		addEventListener(btnOff, 'click', () => {
+			removeEventListener(btnTest)
+		})
+	</script>
+
+	<!-- <p>
+		<button class="alert" type="button">Show alert</button>
+		<button class="disable" type="button">&larr; Disable Click</button>
+	</p>
+
+	<script type="module">
+		import { addEvListener, removeEvListener } from "/src/events.js"
+
+		const btnAlert = document.querySelector('.alert')
+		const btnDisable = document.querySelector('.disable')
+
+		addEvListener(btnAlert, 'click.alert', () => {
+			alert('This is an alert');
+		});
+
+		addEvListener(btnDisable, 'click', () => {
+			removeEvListener(btnAlert, 'click.alert')
+			alert('Alert disabled');
+		});
+	</script> -->
+
+</body>
+</html>
