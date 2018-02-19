@@ -6,49 +6,63 @@
     smartOutline([
       'CSS selector',
       ...
-    ]);
+    ])
 */
 
-const smartOutline = (elements) => {
+import { addEventListener, removeEventListener } from './events.js'
 
-  elements = elements || [
+const initSmartOutline = (selectors) => {
+  selectors = selectors || [
     'input:focus',
     'button:focus',
     'textarea:focus',
     'select:focus',
   ]
 
-  const applyStyles = () => {
-    const oldStyle = document.querySelector('style[data-smart-outline]')
-    oldStyle.parentNode.removeChild(oldStyle)
+  haltSmartOutline()
+  insertStyles(selectors)
 
-    const css = `
-      ${elements.join(', ')} {
-        outline: none !important;
-      }
-    `
-
-    const newStyle = document.createElement('style')
-    newStyle.setAttribute('data-smart-outline', '')
-    newStyle.appendChild(document.createTextNode(css))
-    document.head.appendChild(newStyle)
-  }
-
-  applyStyles()
-  // document.documentElement.classList.add(className)
-
-  document.addEventListener("mousedown", function() {
-    applyStyles()
-    // document.documentElement.classList.add(className)
-  });
-
-  document.addEventListener("keyup", function(e) {
-    if(e.which == 9) {
-      applyStyles()
-      // document.documentElement.classList.remove(className)
+  addEventListener(document, 'mousedown.smartOutline', function() {
+    if(!getOldStylesEl()) {
+      insertStyles(selectors)
     }
-  });
+  })
 
+  addEventListener(document, 'keyup.smartOutline', function(e) {
+    if(e.which == 9) { // tab
+      removeOldStyles()
+    }
+  })
 }
 
-export default smartOutline
+const haltSmartOutline = () => {
+  removeOldStyles()
+  removeEventListener(document, 'mousedown.smartOutline')
+  removeEventListener(document, 'keyup.smartOutline')
+}
+
+const insertStyles = (selectors) => {
+  const css = `
+    ${selectors.join(', ')} {
+      outline: none !important;
+    }
+  `
+
+  const newStyle = document.createElement('style')
+  newStyle.setAttribute('data-smart-outline', '')
+  newStyle.appendChild(document.createTextNode(css))
+  document.head.appendChild(newStyle)
+}
+
+const removeOldStyles = () => {
+  const oldStyle = getOldStylesEl()
+  if(oldStyle) {
+    oldStyle.parentNode.removeChild(oldStyle)
+  }
+}
+
+const getOldStylesEl = () => {
+  return document.head.querySelector('style[data-smart-outline]')
+}
+
+export { initSmartOutline as default, haltSmartOutline }

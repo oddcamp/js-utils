@@ -47,7 +47,7 @@ Examples:
 
 #### `removeEventListener(elements [, eventName = false, callback = false, options/useCapture = false])`
 
-Removes an event handler:
+Removes an event handler.
 * `elements` — a selector string, single or multiple elements
 * `eventName` — event name and optional namespace
 * `handler` — a function to execute when the event is triggered
@@ -63,3 +63,24 @@ Examples:
   removeEventListener(btn, 'click', doIt) // removes 'click' event handlers that are equal to 'doIt()'
   removeEventListener(btn, false, false, { passive: false }) // removes all event handlers that were attached together with the exact provided options
   ```
+
+### smart-outline.js
+
+Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
+
+#### `initSmartOutline([selectors])`
+
+Inits Smart Outline.
+* `selectors` — an array of CSS selectors whose elements to affect. Default value:
+    ```js
+    [
+      'input:focus',
+      'button:focus',
+      'textarea:focus',
+      'select:focus',
+    ]
+    ```
+
+#### `haltSmartOutline()`
+
+Halts Smart Outline.
