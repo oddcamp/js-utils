@@ -2,30 +2,53 @@
   Adds event listener to an element. Using namespaces is available.
 */
 
-const addEventListener = (element, eventName, callback, options = false) => {
+const addEventListener = (elements, eventName, callback, options = false) => {
 
-  if(!element.hasOwnProperty('registeredEvents')) {
-    element.registeredEvents = []
+  if(typeof elements.length === 'undefined') {
+    elements = [elements]
   }
 
-  element.registeredEvents.push({
-    eventName: eventName,
-    callback: callback,
-    options: options,
-  })
+  eventName = eventName.trim()
 
-  element.addEventListener(eventName.split('.')[0], callback, options)
+  elements.forEach((element) => {
+    if(!element.hasOwnProperty('registeredEvents')) {
+      element.registeredEvents = []
+    }
+
+    eventName.split(' ').forEach((eventName) => {
+      element.registeredEvents.push({
+        eventName: eventName,
+        callback: callback,
+        options: options,
+      })
+
+      element.addEventListener(eventName.split('.')[0], callback, options)
+    })
+  })
 }
 
 /*
   Removes event listener from an element. Using namespaces is available.
 */
 
-const removeEventListener = (element, eventName = false, callback = false, options = false) => {
+const removeEventListener = (elements, eventName = false, callback = false, options = false) => {
 
-  // remove all event listeners
-  if(!eventName) {
-    if(element.hasOwnProperty('registeredEvents')) {
+  if(typeof elements.length === 'undefined') {
+    elements = [elements]
+  }
+
+  if(eventName) {
+    eventName = eventName.trim()
+  }
+
+  elements.forEach((element) => {
+    if(!element.hasOwnProperty('registeredEvents')) {
+      return
+    }
+
+    // remove all event listeners
+
+    if(!eventName && !callback && !options) {
       element.registeredEvents.forEach((entry) => {
         element.removeEventListener(
           entry.eventName.split('.')[0],
@@ -35,49 +58,81 @@ const removeEventListener = (element, eventName = false, callback = false, optio
       })
 
       element.registeredEvents = []
+      return
     }
-    return
-  }
 
-  // TODO: throw if eventName is not a string
-  const eventNameSplit = eventName.split('.')
-  const eventType = eventNameSplit[0]
-  const eventNamespace = eventNameSplit.length > 1 ? eventNameSplit[1] : false
+    // remove specific and/or namespaced event listeners
 
-  // remove namespaced event listeners
-  if(eventNameSplit.length > 1) {
-    if(element.hasOwnProperty('registeredEvents')) {
-      element.registeredEvents.forEach((entry) => {
-        const entryEventNameSplit = entry.eventName.split('.')
-        const entryEventType = entryEventNameSplit[0]
-        const entryEventNamespace = entryEventNameSplit.length > 1 ? entryEventNameSplit[1] : false
+    const eventNameSplit = eventName ? eventName.split('.') : []
+    const eventType = eventNameSplit[0] || false
+    const eventNamespace = eventNameSplit[1] || false
 
-        if(
-          entry.eventName == eventName ||
-          !eventNamespace && eventType && eventType == entryEventType ||
-          !eventType && eventNamespace && eventNamespace == entryEventNamespace
-        ){
-          element.removeEventListener(eventType, entry.callback, entry.options)
-          // TODO: delete this from registeredEvents
+    element.registeredEvents.forEach((entry) => {
+      const entryEventNameSplit = entry.eventName.split('.')
+      const entryEventType = entryEventNameSplit[0] || false
+      const entryEventNamespace = entryEventNameSplit[1] || false
+      const entryEventNameMatch = (
+        entry.eventName === eventName ||
+        !eventNamespace && eventType && eventType === entryEventType ||
+        !eventType && eventNamespace && eventNamespace === entryEventNamespace
+      )
+      let doRemove = false
+
+      // only 'eventName' provided
+      if(eventName && !callback && !options) {
+        if(entryEventNameMatch) {
+          doRemove = true
         }
-      })
-    }
-    return
-  }
+      }
 
-  // remove event listeners of the provided callback
-  if(callback) {
-    element.removeEventListener(eventType, callback, options)
-    return
-  }
+      // only 'callback' provided
+      else if(!eventName && callback && !options) {
+        if(callback === entry.callback) {
+          doRemove = true
+        }
+      }
 
-  // element.removeEventListener(
-  //   eventName.split('.')[0],
-  //   element.registeredEvents[eventName].callback,
-  //   element.registeredEvents[eventName].options
-  // )
-  //
-  // delete element.registeredEvents[eventName]
+      // only 'options' provided
+      else if(!eventName && !callback && options) {
+        if(options === entry.options) {
+          doRemove = true
+        }
+      }
+
+      // 'eventName' and 'callback' provided
+      else if(eventName && callback && !options) {
+        if(entryEventNameMatch && callback === entry.callback) {
+          doRemove = true
+        }
+      }
+
+      // 'eventName' and 'options' provided
+      else if(eventName && callback && !options) {
+        if(entryEventNameMatch && options === entry.options) {
+          doRemove = true
+        }
+      }
+
+      // 'callback' and 'options' provided
+      else if(!eventName && callback && options) {
+        if(callback === entry.callback && options === entry.options) {
+          doRemove = true
+        }
+      }
+
+      // everything's provided
+      else {
+        if(entryEventNameMatch && callback === entry.callback && options === entry.options) {
+          doRemove = true
+        }
+      }
+
+      if(doRemove) {
+        element.removeEventListener(entryEventType, entry.callback, entry.options)
+        element.registeredEvents = element.registeredEvents.filter(e => e !== entry)
+      }
+    })
+  })
 }
 
 export {

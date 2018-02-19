@@ -8,50 +8,77 @@
 
 	<h1>Events</h1>
 
+	<!-- a -->
 	<p>
-		<button class="test" type="button">Go baby!</button>
-		<button class="off" type="button">Off</button>
+		<button type="button" class="a1">Click</button>
+		<button type="button" class="a2">&larr; Remove event</button>
+	</p>
+
+	<!-- b -->
+	<p>
+		<button type="button" class="b1">Click or mouseenter</button>
+		<button type="button" class="b2">&larr; Remove all events</button>
+	</p>
+
+	<!-- c -->
+	<p>
+		<button type="button" class="c1">Click</button>
+		<button type="button" class="c2">&larr; Remove namespaced event</button>
 	</p>
 
 	<script type="module">
 		import { addEventListener, removeEventListener } from '/src/events.js'
 
-		const btnTest = document.querySelector('.test')
-		const btnOff = document.querySelector('.off')
+		// a
+		(() => {
+			const btn1 = document.querySelector('.a1')
+			const btn2 = document.querySelector('.a2')
 
-		addEventListener(btnTest, 'click', () => {
-			alert('a')
-		})
+			addEventListener(btn1, 'click', () => {
+				alert('Clicked')
+			})
 
-		addEventListener(btnTest, 'click.b', () => {
-			alert('b')
-		})
+			addEventListener(btn2, 'click', () => {
+				alert('Event listener removed')
+				removeEventListener(btn1, 'click')
+			})
+		})();
 
-		addEventListener(btnOff, 'click', () => {
-			removeEventListener(btnTest)
-		})
+		// b
+		(() => {
+			const btn1 = document.querySelector('.b1')
+			const btn2 = document.querySelector('.b2')
+
+			addEventListener(btn1, 'click mouseenter', (e) => {
+				alert(`Event: ${e.type}`)
+			})
+
+			addEventListener(btn2, 'click', () => {
+				alert('All event listeners removed')
+				removeEventListener(btn1)
+			})
+		})();
+
+		// c
+		(() => {
+			const btn1 = document.querySelector('.c1')
+			const btn2 = document.querySelector('.c2')
+
+			addEventListener(btn1, 'click', (e) => {
+				alert('Usual event')
+			})
+
+			addEventListener(btn1, 'click.namespace', (e) => {
+				alert('NAMESPACED event')
+			})
+
+			addEventListener(btn2, 'click', () => {
+				alert('Namespaced event listener removed')
+				removeEventListener(btn1, 'click.namespace')
+			})
+		})();
+
 	</script>
-
-	<!-- <p>
-		<button class="alert" type="button">Show alert</button>
-		<button class="disable" type="button">&larr; Disable Click</button>
-	</p>
-
-	<script type="module">
-		import { addEvListener, removeEvListener } from "/src/events.js"
-
-		const btnAlert = document.querySelector('.alert')
-		const btnDisable = document.querySelector('.disable')
-
-		addEvListener(btnAlert, 'click.alert', () => {
-			alert('This is an alert');
-		});
-
-		addEvListener(btnDisable, 'click', () => {
-			removeEvListener(btnAlert, 'click.alert')
-			alert('Alert disabled');
-		});
-	</script> -->
 
 </body>
 </html>
