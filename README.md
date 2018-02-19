@@ -26,45 +26,45 @@ A library of ES6 utilities.
 
 ## Documentation
 
-### events.js
+### _events.js_
 
-#### `addEventListener(elements, eventName, handler [, options/useCapture = false])`
+#### `addEventListener(elements, eventName, callback [, options/useCapture = false])`
 
 Attaches an event handler function to the selected element(s).
 * `elements` — a selector string, single or multiple elements
 * `eventName` — single or multiple space-separated event names and optional namespaces
-* `handler` — a function to execute when the event is triggered
+* `callback` — a function to execute when the event is triggered
 * `options/useCapture` — more [info here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
 Examples:
-  ```js
-  addEventListener(btns, 'click', doIt)
-  addEventListener([btn1, btn2], 'click', doIt)
-  addEventListener('.btn', 'click', doIt)
-  addEventListener(btn, 'click focus', doIt)
-  addEventListener(btn, 'click', doIt, { passive: false })
-  ```
+```js
+addEventListener(btns, 'click', doIt)
+addEventListener([btn1, btn2], 'click', doIt)
+addEventListener('.btn', 'click', doIt)
+addEventListener(btn, 'click focus', doIt)
+addEventListener(btn, 'click', doIt, { passive: false })
+```
 
 #### `removeEventListener(elements [, eventName = false, callback = false, options/useCapture = false])`
 
 Removes an event handler.
 * `elements` — a selector string, single or multiple elements
 * `eventName` — event name and optional namespace
-* `handler` — a function to execute when the event is triggered
+* `callback` — a function to execute when the event is triggered
 * `options/useCapture` — more [info here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
 Examples:
-  ```js
-  removeEventListener(btn) // removes all event hanlders
-  removeEventListener(btn, 'click') // removes 'click' event handlers
-  removeEventListener('.btn', 'click') // removes 'click' event handlers
-  removeEventListener(btn, 'click.thisIsNamespace') // removes 'click.thisIsNamespace' event hanlders handlers
-  removeEventListener(btn, false, doIt) // removes all event handlers that are equal to 'doIt()'
-  removeEventListener(btn, 'click', doIt) // removes 'click' event handlers that are equal to 'doIt()'
-  removeEventListener(btn, false, false, { passive: false }) // removes all event handlers that were attached together with the exact provided options
-  ```
+```js
+removeEventListener(btn) // removes all event hanlders
+removeEventListener(btn, 'click') // removes 'click' event handlers
+removeEventListener('.btn', 'click') // removes 'click' event handlers
+removeEventListener(btn, 'click.thisIsNamespace') // removes 'click.thisIsNamespace' event hanlders handlers
+removeEventListener(btn, false, doIt) // removes all event handlers that are equal to 'doIt()'
+removeEventListener(btn, 'click', doIt) // removes 'click' event handlers that are equal to 'doIt()'
+removeEventListener(btn, false, false, { passive: false }) // removes all event handlers that were attached together with the exact provided options
+```
 
-### smart-outline.js
+### _smart-outline.js_
 
 Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
 
@@ -72,6 +72,7 @@ Smart Outline hides the outline when interacting with mouse and brings it back w
 
 Inits Smart Outline.
 * `selectors` — an array of CSS selectors whose elements to affect. Default value:
+
     ```js
     [
       'input:focus',
@@ -84,3 +85,33 @@ Inits Smart Outline.
 #### `haltSmartOutline()`
 
 Halts Smart Outline.
+
+### _debounce.js_
+
+#### `debounce(delay, func)`
+
+Debounce execution of a function.
+* `delay` — delay in miliseconds
+* `func` — function
+
+Example:
+```js
+window.addEventListener('resize', debounce(500, () => {
+  // do something expensive here
+}));
+```
+
+### _throttle.js_
+
+#### `throttle(delay, func)`
+
+Throttle execution of a function.
+* `delay` — delay in miliseconds
+* `func` — function
+
+Example:
+```js
+window.addEventListener('scroll', throttle(500, () => {
+  // do something expensive here
+}));
+```

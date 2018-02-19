@@ -5,12 +5,12 @@
 
   Example:
 
-    window.addEventListener('resize', throttle(500, () => {
+    window.addEventListener('scroll', throttle(500, () => {
       // do something expensive here
     }));
 */
 
-const throttle = (limit, func) => {
+const throttle = (delay, func) => {
   let inThrottle
   return function() {
     const args = arguments
@@ -18,7 +18,7 @@ const throttle = (limit, func) => {
     if (!inThrottle) {
       func.apply(context, args)
       inThrottle = true
-      setTimeout(() => inThrottle = false, limit)
+      setTimeout(() => inThrottle = false, delay)
     }
   }
 }
