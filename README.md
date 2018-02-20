@@ -122,4 +122,4 @@ window.addEventListener('scroll', throttle(500, () => {
 For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Misc
-* https://github.com/lodash/lodash (utility library)
+* https://github.com/lodash/lodash _(utility library)_
