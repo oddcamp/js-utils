@@ -5,6 +5,7 @@ A library of ES6 utilities.
 - [Usage](#usage)
 - [Development](#development)
 - [Documentation](#documentation)
+- [Other resources](#other-resources)
 
 ## Usage
 
@@ -115,3 +116,10 @@ window.addEventListener('scroll', throttle(500, () => {
   // do something expensive here
 }));
 ```
+
+## Other resources
+
+For more functionality, consider using these vanilla JavaScript libraries:
+
+### Misc
+* https://github.com/lodash/lodash

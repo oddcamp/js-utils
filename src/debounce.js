@@ -1,13 +1,7 @@
 /*
-  Debounce execution of a function.
+  Debounces execution of a function.
 
   Borrowed from: https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf
-
-  Example:
-
-    window.addEventListener('resize', debounce(500, () => {
-      // do something expensive here
-    }));
 */
 
 const debounce = (delay, func) => {

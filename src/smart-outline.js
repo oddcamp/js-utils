@@ -1,12 +1,5 @@
 /*
   Disables outline on mouse and re-enables on keyboard activity
-
-  Example:
-
-    smartOutline([
-      'CSS selector',
-      ...
-    ])
 */
 
 import { addEventListener, removeEventListener } from './events.js'
@@ -35,11 +28,17 @@ const initSmartOutline = (selectors) => {
   })
 }
 
+/*
+  Halts Smart Outline
+*/
+
 const haltSmartOutline = () => {
   removeOldStyles()
   removeEventListener(document, 'mousedown.smartOutline')
   removeEventListener(document, 'keyup.smartOutline')
 }
+
+// Helpers
 
 const insertStyles = (selectors) => {
   const css = `
@@ -65,4 +64,7 @@ const getOldStylesEl = () => {
   return document.head.querySelector('style[data-smart-outline]')
 }
 
-export { initSmartOutline as default, haltSmartOutline }
+export {
+  initSmartOutline as default,
+  haltSmartOutline
+}
