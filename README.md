@@ -123,6 +123,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Misc
 * https://github.com/lodash/lodash _(utility library)_
+* https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
