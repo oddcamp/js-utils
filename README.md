@@ -123,3 +123,10 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Misc
 * https://github.com/lodash/lodash _(utility library)_
+* https://github.com/luruke/barba.js _(fluid and smooth transition between website's pages)_
+
+### Scroll
+* https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
+
+### Charts
+* https://frappe.github.io/charts _(simple, responsive, modern charts library)_
