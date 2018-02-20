@@ -124,6 +124,15 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Misc
 * https://github.com/lodash/lodash _(utility library)_
 
+### Validation
+* https://github.com/chriso/validator.js _(string validators and sanitizers)_
+
+### Gesture
+* https://github.com/hammerjs/hammer.js _(multi-touch gestures)_
+
+### Calendar
+* https://github.com/dbushell/Pikaday _(lightweight, modular CSS datepicker)_
+
 ### Scroll
 * https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
 
