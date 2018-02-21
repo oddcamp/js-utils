@@ -4,7 +4,10 @@
 
 const addEventListener = (elements, eventName, callback, options = false) => {
 
-  if(typeof elements.length === 'undefined') {
+  if(typeof elements === 'string') {
+    elements = document.querySelectorAll(elements)
+  }
+  else if(typeof elements.length === 'undefined') {
     elements = [elements]
   }
 
@@ -33,7 +36,10 @@ const addEventListener = (elements, eventName, callback, options = false) => {
 
 const removeEventListener = (elements, eventName = false, callback = false, options = false) => {
 
-  if(typeof elements.length === 'undefined') {
+  if(typeof elements === 'string') {
+    elements = document.querySelectorAll(elements)
+  }
+  else if(typeof elements.length === 'undefined') {
     elements = [elements]
   }
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</header>
+<body>
+
+	<h1>Load Script</h1>
+
+	<p>
+		<button type="button">Load jQuery</button>
+	</p>
+
+	<script type="module">
+		import loadScript from '/src/load-script.js'
+		import { addEventListener } from '/src/events.js'
+
+		const btn = document.querySelector('button')
+
+		addEventListener(btn, 'click', () => {
+			btn.disabled = true
+			btn.innerText = 'One moment... Would you capture it...'
+
+			loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', false)
+				.then(() => {
+					alert(`Loaded. \`typeof $\`: \`${typeof $}\``)
+					$('button').text('jQuery loaded. You can play with it in the console.')
+				}).catch(error => {
+					alert(`Error: ${error}. Try again.`)
+				})
+		})
+	</script>
+
+</body>
+</html>

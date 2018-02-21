@@ -66,5 +66,5 @@ const getOldStylesEl = () => {
 
 export {
   initSmartOutline as default,
-  haltSmartOutline
+  haltSmartOutline,
 }

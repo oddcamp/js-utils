@@ -32,6 +32,8 @@ A library of ES6 utilities.
 #### `addEventListener(elements, eventName, callback [, options/useCapture = false])`
 
 Attaches an event handler function to the selected element(s).
+
+Accepts:
 * `elements` — a selector string, single or multiple elements
 * `eventName` — single or multiple space-separated event names and optional namespaces
 * `callback` — a function to execute when the event is triggered
@@ -43,12 +45,14 @@ addEventListener(btns, 'click', doIt)
 addEventListener([btn1, btn2], 'click', doIt)
 addEventListener('.btn', 'click', doIt)
 addEventListener(btn, 'click focus', doIt)
-addEventListener(btn, 'click', doIt, { passive: false })
+addEventListener(btn, 'click', doIt, { passive: true })
 ```
 
 #### `removeEventListener(elements [, eventName = false, callback = false, options/useCapture = false])`
 
 Removes an event handler.
+
+Accepts:
 * `elements` — a selector string, single or multiple elements
 * `eventName` — event name and optional namespace
 * `callback` — a function to execute when the event is triggered
@@ -72,6 +76,8 @@ Smart Outline hides the outline when interacting with mouse and brings it back w
 #### `initSmartOutline([selectors])`
 
 Inits Smart Outline.
+
+Accepts:
 * `selectors` — an array of CSS selectors whose elements to affect. Default value:
 
     ```js
@@ -92,6 +98,8 @@ Halts Smart Outline.
 #### `debounce(delay, func)`
 
 Debounce execution of a function.
+
+Accepts:
 * `delay` — delay in miliseconds
 * `func` — function
 
@@ -99,7 +107,7 @@ Example:
 ```js
 window.addEventListener('resize', debounce(500, () => {
   // do something expensive here
-}));
+}))
 ```
 
 ### _throttle.js_
@@ -107,6 +115,8 @@ window.addEventListener('resize', debounce(500, () => {
 #### `throttle(delay, func)`
 
 Throttle execution of a function.
+
+Accepts:
 * `delay` — delay in miliseconds
 * `func` — function
 
@@ -114,7 +124,29 @@ Example:
 ```js
 window.addEventListener('scroll', throttle(500, () => {
   // do something expensive here
-}));
+}))
+```
+
+### _load-script.js_
+
+#### `loadScript(src, cache = true)`
+
+Loads script file.
+
+Accepts:
+* `src` — file to load
+* `cache` — load naturally (default) or add a URL parameter to bust the cache
+
+Returns: Promise.
+
+Example:
+```js
+loadScript('jquery.min.js', false)
+  .then(() => {
+    alert(typeof $)
+  }).catch(error => {
+    alert(`Error: ${error}. Try again.`)
+  })
 ```
 
 ## Other resources
