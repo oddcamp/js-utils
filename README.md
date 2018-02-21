@@ -168,6 +168,8 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Scroll
 * https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
+* https://github.com/dbrekalo/whenInViewport _(handle elements as they enter viewport)_
+* https://github.com/zengabor/zenscroll _(smooth-scroll web pages and other scrollable elements)_
 
 ### Charts
 * https://frappe.github.io/charts _(simple, responsive, modern charts library)_
@@ -178,3 +180,6 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### CSS
 * https://polished.js.org _(a lightweight toolset for writing CSS in JS)_
+
+### Video
+* https://www.npmjs.com/package/fitvids _(responsive videos)_
