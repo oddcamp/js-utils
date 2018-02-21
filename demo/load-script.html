@@ -22,7 +22,7 @@
 			btn.disabled = true
 			btn.innerText = 'One moment... Would you capture it...'
 
-			loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', false)
+			loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 				.then(() => {
 					alert(`Loaded. \`typeof $\`: \`${typeof $}\``)
 					$('button').text('jQuery loaded. You can play with it in the console.')
