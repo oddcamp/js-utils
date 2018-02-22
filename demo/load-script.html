@@ -25,7 +25,7 @@
 			loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 				.then(() => {
 					alert(`Loaded. \`typeof $\`: \`${typeof $}\``)
-					$('button').text('jQuery loaded. You can play with it in the console.')
+					$(btn).text('jQuery loaded. You can play with it in the console.')
 				}).catch(error => {
 					alert(`Error: ${error}. Try again.`)
 				})
