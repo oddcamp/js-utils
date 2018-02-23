@@ -27,7 +27,7 @@ A library of ES6 utilities.
 
 ## Documentation
 
-### _events.js_
+### _event.js_
 
 #### `addEventListener(elements, eventName, callback [, options/useCapture = false])`
 
@@ -147,6 +147,29 @@ loadScript('jquery.min.js', false)
   }).catch(error => {
     alert(`Error: ${error}. Try again.`)
   })
+```
+
+### _promise.js_
+
+#### `serialPromises(...funcs)`
+
+Resolves promises sequentially.
+
+Accepts:
+* `...funcs` — functions as arguments
+
+Returns: Promise.
+
+Example:
+```js
+serialPromises(
+  () => loadScript('jquery.min.js'),
+  () => loadScript('jquery-ui.min.js'),
+).then(() => {
+  $('ul').sortable()
+}).catch(error => {
+  // error
+})
 ```
 
 ## Other resources

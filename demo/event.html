@@ -6,7 +6,7 @@
 </header>
 <body>
 
-	<h1>Events</h1>
+	<h1>Event</h1>
 
 	<!-- a -->
 	<p>
@@ -26,11 +26,30 @@
 		<button type="button" class="c2">&larr; Remove namespaced event</button>
 	</p>
 
+	<!-- d -->
+	<p>
+		<input type="text" class="d1" />
+	</p>
+
 	<script type="module">
-		import { addEventListener, removeEventListener } from '/src/events.js'
+		import { addEventListener, removeEventListener } from '/src/event.js'
+
+		const elem = document.querySelector('.d1')
+		addEventListener(elem, 'focus', () => {
+			console.log('focused')
+		})
+
+		setTimeout(() => {
+			console.log('setTimeout')
+			let event = new Event("focus");
+			elem.dispatchEvent(event);
+			// event = new CustomEvent('mousedown')
+			// elem.dispatchEvent(event)
+			// elem.focus()
+		}, 2000)
 
 		// a
-		(() => {
+		;(() => {
 			const btn1 = document.querySelector('.a1')
 			const btn2 = document.querySelector('.a2')
 
@@ -45,7 +64,7 @@
 		})();
 
 		// b
-		(() => {
+		;(() => {
 			const btn1 = document.querySelector('.b1')
 			const btn2 = document.querySelector('.b2')
 
@@ -60,7 +79,7 @@
 		})();
 
 		// c
-		(() => {
+		;(() => {
 			const btn1 = document.querySelector('.c1')
 			const btn2 = document.querySelector('.c2')
 

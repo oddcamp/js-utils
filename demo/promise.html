@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</header>
+<body>
+
+	<h1>Promise</h1>
+
+	<p>
+		<button type="button">Load jQuery and jQuery UI</button>
+	</p>
+
+	<ul>
+		<li>
+			You can sort
+		</li>
+		<li>
+			these list items
+		</li>
+		<li>
+			once you load
+		</li>
+		<li>
+			the JS libs!
+		</li>
+	</ul>
+
+	<script type="module">
+		import loadScript from '/src/load-script.js'
+		import serialPromises from '/src/promise.js'
+		import { addEventListener } from '/src/event.js'
+
+		const btn = document.querySelector('button')
+
+		addEventListener(btn, 'click', () => {
+			btn.disabled = true
+			btn.innerText = 'Loading...'
+
+			serialPromises(
+				() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'),
+				() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'),
+			).then(() => {
+				alert('Go ahead, sort the list!')
+				$(btn).text('Loaded')
+				$('ul').sortable().find('li').css('cursor', 'ns-resize')
+			}).catch(error => {
+				alert(`Error: ${error}. Try again.`)
+			})
+		})
+	</script>
+
+</body>
+</html>

@@ -141,7 +141,22 @@ const removeEventListener = (elements, eventName = false, callback = false, opti
   })
 }
 
+/*
+  Triggers event on an element. Using namespaces is available.
+*/
+
+const triggerEvent = (elements, eventName, data = null) => {
+
+  const nativeEvents = [
+    'click',
+    'focus',
+    'blur',
+  ]
+
+}
+
 export {
   addEventListener,
   removeEventListener,
+  triggerEvent,
 }
