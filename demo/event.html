@@ -28,25 +28,18 @@
 
 	<!-- d -->
 	<p>
-		<input type="text" class="d1" />
+		<button type="button" class="d1">Click</button>
+		<button type="button" class="d2">&larr; Trigger click</button>
+	</p>
+
+	<!-- e -->
+	<p>
+		<input type="text" placeholder="Data to pass"  class="e1" />
+		<button type="button" class="e2">&larr; Trigger custom event that alerts the passed data</button>
 	</p>
 
 	<script type="module">
-		import { addEventListener, removeEventListener } from '/src/event.js'
-
-		const elem = document.querySelector('.d1')
-		addEventListener(elem, 'focus', () => {
-			console.log('focused')
-		})
-
-		setTimeout(() => {
-			console.log('setTimeout')
-			let event = new Event("focus");
-			elem.dispatchEvent(event);
-			// event = new CustomEvent('mousedown')
-			// elem.dispatchEvent(event)
-			// elem.focus()
-		}, 2000)
+		import { addEventListener, removeEventListener, triggerEvent } from '/src/event.js'
 
 		// a
 		;(() => {
@@ -94,6 +87,34 @@
 			addEventListener(btn2, 'click', () => {
 				alert('Namespaced event listener removed')
 				removeEventListener(btn1, 'click.namespace')
+			})
+		})();
+
+		// d
+		;(() => {
+			const btn1 = document.querySelector('.d1')
+			const btn2 = document.querySelector('.d2')
+
+			addEventListener(btn1, 'click', () => {
+				alert('Clicked')
+			})
+
+			addEventListener(btn2, 'click', () => {
+				triggerEvent(btn1, 'click')
+			})
+		})();
+
+		// e
+		;(() => {
+			const input = document.querySelector('.e1')
+			const btn = document.querySelector('.e2')
+
+			addEventListener(btn, 'click', () => {
+				triggerEvent(btn, 'customEvent', input.value)
+			})
+
+			addEventListener(btn, 'customEvent', (e) => {
+				alert(`Data received: ${e.detail}`)
 			})
 		})();
 	</script>
