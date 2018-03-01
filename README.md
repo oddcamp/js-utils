@@ -78,6 +78,16 @@ Accepts:
 * `eventNames` — single or multiple space-separated event names and optional namespaces
 * `data` — data to pass to the event handler (`(e) => {e.detail}`). Doesn't work with `click|focus|blur` events.
 
+Examples:
+```js
+triggerEvent(btn, 'click') // triggers 'click' event
+triggerEvent(btn, 'click.thisIsNamespace') // triggers 'click.thisIsNamespace' event
+triggerEvent(btn, '.thisIsNamespace') // triggers all events with 'thisIsNamespace' namespace
+triggerEvent(btn, 'customEvent') // triggers custom event
+triggerEvent(btn, 'customEvent', 'someData') // triggers custom event and passed data
+triggerEvent(btn, 'customEvent', {some: 'data'}) // triggers custom event and passed data
+```
+
 ### _smart-outline.js_
 
 Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
