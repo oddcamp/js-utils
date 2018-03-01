@@ -29,13 +29,13 @@ A library of ES6 utilities.
 
 ### _event.js_
 
-#### `addEventListener(elements, eventName, callback [, options/useCapture = false])`
+#### `addEventListener(elements, eventNames, callback [, options/useCapture = false])`
 
 Attaches an event handler function to the selected element(s).
 
 Accepts:
 * `elements` — a selector string, single or multiple elements
-* `eventName` — single or multiple space-separated event names and optional namespaces
+* `eventNames` — single or multiple space-separated event names and optional namespaces
 * `callback` — a function to execute when the event is triggered
 * `options/useCapture` — more [info here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
@@ -68,6 +68,15 @@ removeEventListener(btn, false, doIt) // removes all event handlers that are equ
 removeEventListener(btn, 'click', doIt) // removes 'click' event handlers that are equal to 'doIt()'
 removeEventListener(btn, false, false, { passive: false }) // removes all event handlers that were attached together with the exact provided options
 ```
+
+#### `triggerEvent(elements, eventNames[, data = null])`
+
+Triggers an event.
+
+Accepts:
+* `elements` — a selector string, single or multiple elements
+* `eventNames` — single or multiple space-separated event names and optional namespaces
+* `data` — data to pass to the event handler (`(e) => {e.detail}`). Doesn't work with `click|focus|blur` events.
 
 ### _smart-outline.js_
 
