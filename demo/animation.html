@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<style>
+		div {
+			width: 5em;
+			height: 5em;
+			background-color: red;
+		}
+
+		.a {
+			animation: xxx 1s forwards, yyy 1s 1s forwards;
+			/* animation: xxx 1s forwards; */
+		}
+
+		.b {
+			animation: xxx 3s forwards;
+		}
+
+		.tmp {
+			animation: zzz 1s forwards;
+		}
+
+		/* span {
+			width: 2em;
+			height: 2em;
+			background-color: green;
+			animation: xxx 3s forwards;
+			display: block;
+		} */
+
+		@keyframes xxx {
+			100% {
+				transform: translateX(100%);
+			}
+		}
+
+		@keyframes yyy {
+			0% {
+				transform: translateX(100%);
+			}
+
+			100% {
+				transform: translateX(0%);
+			}
+		}
+
+		@keyframes zzz {
+			100% {
+				transform: translateY(100%);
+			}
+		}
+	</style>
+</header>
+<body>
+
+	<h1>Animation</h1>
+
+	<div class="a">
+		<span></span>
+	</div>
+
+	<div class="b">
+	</div>
+
+	<script type="module">
+		import { onCssAnimationEnd, onCssTransitionEnd } from '/src/animation.js'
+
+		const el = document.querySelectorAll('.a')
+
+		onCssAnimationEnd(el, () => {alert('a')}, {oncePerAnims: false})
+	</script>
+
+</body>
+</html>

@@ -37,7 +37,7 @@ const addEventListener = (elements, eventNames, callback, options = false) => {
       })
 
       element.addEventListener(
-        nativeEvents.includes(eventNameType) ? eventNameType : eventName,
+        eventNameType,
         callback,
         options
       )
