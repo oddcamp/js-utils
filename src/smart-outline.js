@@ -2,7 +2,7 @@
   Disables outline on mouse and re-enables on keyboard activity
 */
 
-import { addEventListener, removeEventListener } from './events.js'
+import { addEventListener, removeEventListener } from './event.js'
 
 const initSmartOutline = (selectors) => {
   selectors = selectors || [
