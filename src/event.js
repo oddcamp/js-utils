@@ -8,7 +8,7 @@ const getElements = (elements) => {
   if(typeof elements === 'string') {
     elements = document.querySelectorAll(elements)
   }
-  else if(typeof elements.length === 'undefined') {
+  else if(typeof elements.length === 'undefined' || elements.length === 0) {
     elements = [elements]
   }
   return elements
