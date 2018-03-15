@@ -199,6 +199,10 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/lodash/lodash _(utility library)_
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 
+### DOM manipulation
+
+* https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
+
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
 
