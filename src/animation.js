@@ -34,7 +34,7 @@ const getElements = (elements) => {
   if(typeof elements === 'string') {
     elements = document.querySelectorAll(elements)
   }
-  else if(typeof elements.length === 'undefined' || elements.length === 0) {
+  else if(typeof elements.length === 'undefined' || elements === window || elements === document) {
     elements = [elements]
   }
   return elements
