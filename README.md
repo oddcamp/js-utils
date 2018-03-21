@@ -197,10 +197,8 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Misc
 * https://github.com/lodash/lodash _(utility library)_
-* https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 
 ### DOM manipulation
-
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
 
 ### Validation
@@ -224,8 +222,17 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/turbolinks/turbolinks _(browse the site without "hard refresh")_
 * https://github.com/luruke/barba.js _(fluid and smooth transition between website's pages)_
 
+### Menus
+
+* https://github.com/osvaldasvalutis/accessiblenav.js _(accessible multi-level dropdown menus)_
+
 ### CSS
 * https://polished.js.org _(a lightweight toolset for writing CSS in JS)_
 
 ### Video
 * https://www.npmjs.com/package/fitvids _(responsive videos)_
+
+### Polyfils
+
+* https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
+* https://www.npmjs.com/package/element-closest _(polyfill for #Element.closest)_
