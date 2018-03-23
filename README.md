@@ -18,6 +18,9 @@ A library of ES6 utilities.
 
 3. Browse [Documentation](#documentation)
 
+In order to gain a wider browser support, install and import these polyfills:
+  - [nodelist-foreach-polyfill](https://www.npmjs.com/package/nodelist-foreach-polyfill)
+
 ## Development
 
 1. Install dependencies with `$ yarn`
@@ -237,3 +240,4 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 * https://www.npmjs.com/package/element-closest _(polyfill for #Element.closest)_
+* https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach())_
