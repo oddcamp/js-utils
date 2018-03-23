@@ -1,4 +1,5 @@
-import { addEventListener, removeEventListener } from '/src/event.js'
+import { addEventListener, removeEventListener } from './event.js'
+import { getElements } from './selector.js'
 
 const animationEventNames = {
   'animation': 'animationend',
@@ -28,16 +29,6 @@ for(let e in transitionEventNames) {
     transitionEventName = `${transitionEventNames[e]}.onCssTransitionEnd`
     break
   }
-}
-
-const getElements = (elements) => {
-  if(typeof elements === 'string') {
-    elements = document.querySelectorAll(elements)
-  }
-  else if(typeof elements.length === 'undefined' || elements === window || elements === document) {
-    elements = [elements]
-  }
-  return elements
 }
 
 const onEnd = (

@@ -1,18 +1,10 @@
+import { getElements } from './selector.js'
+
 const nativeEvents = [
   'click',
   'focus',
   'blur',
 ]
-
-const getElements = (elements) => {
-  if(typeof elements === 'string') {
-    elements = document.querySelectorAll(elements)
-  }
-  else if(typeof elements.length === 'undefined' || elements === window || elements === document) {
-    elements = [elements]
-  }
-  return elements
-}
 
 /*
   Adds event listener to an element. Using namespaces is available.
