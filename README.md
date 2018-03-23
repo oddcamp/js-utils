@@ -21,9 +21,10 @@ A library of ES6 utilities.
 ## Development
 
 1. Install dependencies with `$ yarn`
-2. Run `$ gulp` when developing. This will run the linter for your own good
-3. Edit contents of `src`
-4. Make sure the corresponding examples on `demo` are updated/added. Do `$ node server.js` to start the server for browsing/testing the demos
+2. Run `$ yarn dev` when developing. This will:
+    - Run the linter for your own good
+    - Start server for demos
+3. Edit contents of `src` and make sure the corresponding examples on `demo` are updated/added
 
 ## Documentation
 

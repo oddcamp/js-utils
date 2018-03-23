@@ -3,6 +3,7 @@ const path = require('path')
 const app = express()
 const appPort = 3000
 
+app.use(express.static('./demo'))
 app.use('/src', express.static(path.join(`${__dirname}/../src/`)))
 app.use('/', express.static(path.join(__dirname, '/')))
 

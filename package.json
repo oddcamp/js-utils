@@ -4,7 +4,7 @@
   "description": "Kollegorna's JavaScript utilities",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kollegorna/js-utils#readme",
   "devDependencies": {
+    "child_process": "^1.0.2",
     "eslint-plugin-import": "^2.8.0",
     "express": "^4.16.2",
     "gulp": "^3.9.1",
