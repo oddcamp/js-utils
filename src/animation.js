@@ -1,6 +1,8 @@
 import { addEventListener, removeEventListener } from './event.js'
 import { getElements } from './selector.js'
 
+// local variables
+
 const animationEventNames = {
   'animation': 'animationend',
   'OAnimation': 'oAnimationEnd',
@@ -30,6 +32,8 @@ for(let e in transitionEventNames) {
     break
   }
 }
+
+// local functions
 
 const onEnd = (
   type,
@@ -87,29 +91,37 @@ const onEnd = (
 
 }
 
-// -----------------------------------------------------------------------------
-// Fires a callback function when CSS animation ends
+/*
+  ------------------------------------------------------------------------------
+  Fires a callback function when CSS animation ends
+*/
 
 const onCssAnimationEnd = (...args) => {
   onEnd('animation', ...args)
 }
 
-// -----------------------------------------------------------------------------
-// Fires a callback function when CSS transition ends
+/*
+  ------------------------------------------------------------------------------
+  Fires a callback function when CSS transition ends
+*/
 
 const onCssTransitionEnd = (...args) => {
   onEnd('transition', ...args)
 }
 
-// -----------------------------------------------------------------------------
-// Cleans all CSS animation end event listeners
+/*
+  ------------------------------------------------------------------------------
+  Cleans all CSS animation end event listeners
+*/
 
 const clearCssAnimationEnd = (elements) => {
   removeEventListener(elements, animationEventName)
 }
 
-// -----------------------------------------------------------------------------
-// Cleans all CSS transition end event listeners
+/*
+  ------------------------------------------------------------------------------
+  Cleans all CSS transition end event listeners
+*/
 
 const clearCssTransitionEnd = (elements) => {
   removeEventListener(elements, transitionEventName)

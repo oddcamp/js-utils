@@ -1,5 +1,7 @@
 import { getElements } from './selector.js'
 
+// local variables
+
 const nativeEvents = [
   'click',
   'focus',
@@ -7,6 +9,7 @@ const nativeEvents = [
 ]
 
 /*
+  ------------------------------------------------------------------------------
   Adds event listener to an element. Using namespaces is available.
 */
 
@@ -38,6 +41,7 @@ const addEventListener = (elements, eventNames, callback, options = false) => {
 }
 
 /*
+  ------------------------------------------------------------------------------
   Removes event listener from an element. Using namespaces is available.
 */
 
@@ -136,6 +140,7 @@ const removeEventListener = (elements, eventName = false, callback = false, opti
 }
 
 /*
+  ------------------------------------------------------------------------------
   Triggers event on an element. Using namespaces is available.
 */
 
@@ -192,6 +197,10 @@ const triggerEvent = (elements, eventNames, data = null) => {
   })
 
 }
+
+/*
+  ------------------------------------------------------------------------------
+*/
 
 export {
   addEventListener,

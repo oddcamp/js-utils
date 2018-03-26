@@ -1,4 +1,5 @@
 /*
+  ------------------------------------------------------------------------------
   Accepts String, Element, NodeList, Array and returns Array of elements
 
   @param {String|Array|Element|NodeList} elements
@@ -23,6 +24,7 @@ const getElements = (elements) => {
 }
 
 /*
+  ------------------------------------------------------------------------------
   Based on how Element.closest() works. Returns true if `element` has the
   closest ancestor (or itself) that matches the `matches` (element|selector)
 
@@ -48,6 +50,7 @@ const hasClosest = (element, matches) => {
 }
 
 /*
+  ------------------------------------------------------------------------------
   Returns an Array of parents of `element` that matches the given `selector`
   up until the `until` matching element|selector
 
@@ -85,6 +88,10 @@ const getParents = (element, selector = '', until = null) => {
   }
   return parents
 }
+
+/*
+  ------------------------------------------------------------------------------
+*/
 
 export {
   getElements,

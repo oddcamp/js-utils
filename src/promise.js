@@ -1,6 +1,6 @@
 /*
+  ------------------------------------------------------------------------------
   Resolves promises sequentially
-
   Borrowed from: https://hackernoon.com/functional-javascript-resolving-promises-sequentially-7aac18c4431e
 */
 
@@ -12,5 +12,9 @@ const serialPromises = (...funcs) => {
   )
 
 }
+
+/*
+  ------------------------------------------------------------------------------
+*/
 
 export default serialPromises

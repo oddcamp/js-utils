@@ -1,8 +1,35 @@
+import { addEventListener, removeEventListener } from './event.js'
+
+// local functions
+
+const insertStyles = (selectors) => {
+  const css = `
+    ${selectors.join(', ')} {
+      outline: none !important;
+    }
+  `
+
+  const newStyle = document.createElement('style')
+  newStyle.setAttribute('data-smart-outline', '')
+  newStyle.appendChild(document.createTextNode(css))
+  document.head.appendChild(newStyle)
+}
+
+const removeOldStyles = () => {
+  const oldStyle = getOldStylesEl()
+  if(oldStyle) {
+    oldStyle.parentNode.removeChild(oldStyle)
+  }
+}
+
+const getOldStylesEl = () => {
+  return document.head.querySelector('style[data-smart-outline]')
+}
+
 /*
+  ------------------------------------------------------------------------------
   Disables outline on mouse and re-enables on keyboard activity
 */
-
-import { addEventListener, removeEventListener } from './event.js'
 
 const initSmartOutline = (selectors) => {
   selectors = selectors || [
@@ -29,6 +56,7 @@ const initSmartOutline = (selectors) => {
 }
 
 /*
+  ------------------------------------------------------------------------------
   Halts Smart Outline
 */
 
@@ -38,31 +66,9 @@ const haltSmartOutline = () => {
   removeEventListener(document, 'keyup.smartOutline')
 }
 
-// Helpers
-
-const insertStyles = (selectors) => {
-  const css = `
-    ${selectors.join(', ')} {
-      outline: none !important;
-    }
-  `
-
-  const newStyle = document.createElement('style')
-  newStyle.setAttribute('data-smart-outline', '')
-  newStyle.appendChild(document.createTextNode(css))
-  document.head.appendChild(newStyle)
-}
-
-const removeOldStyles = () => {
-  const oldStyle = getOldStylesEl()
-  if(oldStyle) {
-    oldStyle.parentNode.removeChild(oldStyle)
-  }
-}
-
-const getOldStylesEl = () => {
-  return document.head.querySelector('style[data-smart-outline]')
-}
+/*
+  ------------------------------------------------------------------------------
+*/
 
 export {
   initSmartOutline as default,

@@ -1,5 +1,7 @@
 import { getElements } from './selector.js'
 
+// local functions
+
 const manipulateClass = (type, elements, classnames, force = undefined) => {
   elements = getElements(elements)
 
@@ -21,8 +23,7 @@ const manipulateClass = (type, elements, classnames, force = undefined) => {
   An extended implementation of Element.classList.add(): adds classname(s) to
   single or multiple elements
 
-  @param {String|Element|NodeList|Array} elements Selector, single or multiple
-  elements
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
   @param {String} classnames Space separated if multiple
 */
 
@@ -35,8 +36,7 @@ const addClass = (...args) => {
   An extended implementation of Element.classList.remove(): removes classname(s)
   from single or multiple elements
 
-  @param {String|Element|NodeList|Array} elements Selector, single or multiple
-  elements
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
   @param {String} classnames Space separated if multiple
 */
 
@@ -49,8 +49,7 @@ const removeClass = (...args) => {
   An extended implementation of Element.classList.remove(): removes classname(s)
   from single or multiple elements
 
-  @param {String|Element|NodeList|Array} elements Selector, single or multiple
-  elements
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
   @param {String} classnames Space separated if multiple
   @param {Bool} [optional] force
 */
