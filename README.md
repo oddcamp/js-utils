@@ -239,5 +239,5 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Polyfils
 
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
-* https://www.npmjs.com/package/element-closest _(polyfill for #Element.closest)_
+* https://www.npmjs.com/package/element-closest _(polyfills for #Element.closest and #Element.matches)_
 * https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach())_

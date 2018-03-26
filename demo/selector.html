@@ -9,7 +9,7 @@
 	<h1>Selector</h1>
 
 	<div class="a">
-        A
+        <span>Ok!</span>
 	</div>
 
 	<div class="b">
@@ -17,9 +17,9 @@
 	</div>
 
 	<script type="module">
-		import { getElements } from '/src/selector.js'
+		import { hasClosest } from '/src/selector.js'
 
-		console.log(typeof getElements(document.querySelector('div')).length)
+		console.log(hasClosest(document.querySelector('span'), document.querySelector('.a')))
 	</script>
 
 </body>
