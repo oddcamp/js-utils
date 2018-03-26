@@ -29,6 +29,8 @@ const getOldStylesEl = () => {
 /*
   ------------------------------------------------------------------------------
   Disables outline on mouse and re-enables on keyboard activity
+
+  @param {Array} selectors The list of selectors to disable outline for
 */
 
 const initSmartOutline = (selectors) => {

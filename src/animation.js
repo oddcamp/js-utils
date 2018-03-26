@@ -94,6 +94,25 @@ const onEnd = (
 /*
   ------------------------------------------------------------------------------
   Fires a callback function when CSS animation ends
+
+  @param {String|Element|NodeList|Array} elements
+      Selector, single or multiple elements to work with
+  @param {Function} callback
+      The function to call the animation ends
+  @param {Object} options [optional] Optional comments
+    @param {Bool} continuous (false)
+        If `false` the event listener is removed once all of the desired
+        callback functions are called. Otherwise it will keep listening
+        for future animations
+    @param {Bool} oncePerElems (true)
+        If `true`, the callback function is called only once when all of the
+        animations for all the given elements are completed. Otherwise the
+        callback function is called per element basis, depending on the
+        `oncePerAnims` option
+    @param {Bool} oncePerAnims (true)
+        If `true`, the callback function is called only once when all of the
+        animations have been completed. Otherwise the function is called for
+        each animation completed
 */
 
 const onCssAnimationEnd = (...args) => {
@@ -103,6 +122,25 @@ const onCssAnimationEnd = (...args) => {
 /*
   ------------------------------------------------------------------------------
   Fires a callback function when CSS transition ends
+
+  @param {String|Element|NodeList|Array} elements
+      Selector, single or multiple elements to work with
+  @param {Function} callback
+      The function to call the animation ends
+  @param {Object} options [optional] Optional comments
+    @param {Bool} continuous (false)
+        If `false` the event listener is removed once all of the desired
+        callback functions are called. Otherwise it will keep listening
+        for future transitions
+    @param {Bool} oncePerElems (true)
+        If `true`, the callback function is called only once when all of the
+        transitions for all the given elements are completed. Otherwise the
+        callback function is called per element basis, depending on the
+        `oncePerAnims` option
+    @param {Bool} oncePerAnims (true)
+        If `true`, the callback function is called only once when all of the
+        transitions have been completed. Otherwise the function is called for
+        each transition completed
 */
 
 const onCssTransitionEnd = (...args) => {
@@ -112,6 +150,8 @@ const onCssTransitionEnd = (...args) => {
 /*
   ------------------------------------------------------------------------------
   Cleans all CSS animation end event listeners
+
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
 */
 
 const clearCssAnimationEnd = (elements) => {
@@ -121,6 +161,8 @@ const clearCssAnimationEnd = (elements) => {
 /*
   ------------------------------------------------------------------------------
   Cleans all CSS transition end event listeners
+
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
 */
 
 const clearCssTransitionEnd = (elements) => {

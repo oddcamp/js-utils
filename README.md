@@ -19,8 +19,9 @@ A library of ES6 utilities.
 3. Browse [Documentation](#documentation)
 
 In order to gain a wider browser support, install and import these polyfills in your project:
-  - https://www.npmjs.com/package/element-closest _(polyfills for #Element.closest and #Element.matches)_
-  - https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach())_
+  - [element-closest](https://www.npmjs.com/package/element-closest) _(polyfills for Element.closest and Element.matches)_
+  - [nodelist-foreach-polyfill](https://www.npmjs.com/package/nodelist-foreach-polyfill) _(polyfill for Nodelist.prototype.forEach())_
+  - [classlist-polyfill](https://www.npmjs.com/package/classlist-polyfill) _(polyfill for Element.classList)_
 
 ## Development
 
@@ -32,17 +33,78 @@ In order to gain a wider browser support, install and import these polyfills in 
 
 ## Documentation
 
-### _event.js_
+### [_animation.js_](https://github.com/kollegorna/js-utils/blob/master/src/animation.js)
+
+#### `onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
+
+Fires a callback function when CSS animation ends.
+
+Examples:
+```js
+onCssAnimationEnd(btn, callbackFunction)
+onCssAnimationEnd(btns, callbackFunction, {oncePerAnims = false})
+onCssAnimationEnd('.btn', callbackFunction)
+```
+
+#### `onCssTransitionEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
+
+Fires a callback function when CSS transition ends
+
+Examples:
+```js
+onCssTransitionEnd(btn, callbackFunction)
+onCssTransitionEnd(btns, callbackFunction, {oncePerElems = false})
+onCssTransitionEnd('.btn', callbackFunction)
+```
+
+#### `clearCssAnimationEnd(elements)`
+
+Cleans all CSS animation end event listeners
+
+#### `clearCssTransitionEnd(elements)`
+
+Cleans all CSS transition end event listeners
+
+### [_attribute.js_](https://github.com/kollegorna/js-utils/blob/master/src/attribute.js)
+
+#### `addClass(elements, classnames)`
+
+An extended implementation of Element.classList.add(): adds classname(s) to
+single or multiple elements
+
+Examples:
+```js
+addClass(btn, 'btn--green')
+addClass('.btn', 'btn--disabled btn--grey')
+```
+
+#### `removeClass(elements, classnames)`
+
+An extended implementation of Element.classList.remove(): removes classname(s)
+from single or multiple elements
+
+Examples:
+```js
+removeClass(btn, 'btn--green')
+removeClass('.btn', 'btn--disabled btn--grey')
+```
+
+#### `toggleClass(elements, classnames [, force = undefined])`
+
+An extended implementation of Element.classList.remove(): toggles classname(s)
+from single or multiple elements
+
+Examples:
+```js
+toggleClass(btn, 'btn--green', true)
+toggleClass('.btn', 'btn--disabled btn--grey')
+```
+
+### [_event.js_](https://github.com/kollegorna/js-utils/blob/master/src/event.js)
 
 #### `addEventListener(elements, eventNames, callback [, options/useCapture = false])`
 
-Attaches an event handler function to the selected element(s).
-
-Accepts:
-* `elements` — a selector string, single or multiple elements
-* `eventNames` — single or multiple space-separated event names and optional namespaces
-* `callback` — a function to execute when the event is triggered
-* `options/useCapture` — more [info here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+Attaches the event handler. More about [options/useCapture](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener).
 
 Examples:
 ```js
@@ -55,13 +117,7 @@ addEventListener(btn, 'click', doIt, { passive: true })
 
 #### `removeEventListener(elements [, eventName = false, callback = false, options/useCapture = false])`
 
-Removes an event handler.
-
-Accepts:
-* `elements` — a selector string, single or multiple elements
-* `eventName` — event name and optional namespace
-* `callback` — a function to execute when the event is triggered
-* `options/useCapture` — more [info here](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+Removes the event handler. More about [options/useCapture](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener).
 
 Examples:
 ```js
@@ -74,14 +130,9 @@ removeEventListener(btn, 'click', doIt) // removes 'click' event handlers that a
 removeEventListener(btn, false, false, { passive: false }) // removes all event handlers that were attached together with the exact provided options
 ```
 
-#### `triggerEvent(elements, eventNames[, data = null])`
+#### `triggerEvent(elements, eventNames [, data = null])`
 
-Triggers an event.
-
-Accepts:
-* `elements` — a selector string, single or multiple elements
-* `eventNames` — single or multiple space-separated event names and optional namespaces
-* `data` — data to pass to the event handler (`(e) => {e.detail}`). Doesn't work with `click|focus|blur` events.
+Triggers the event(s). `data` — data to pass to the event handler (`(e) => {e.detail}`). Doesn't work with `click|focus|blur` events.
 
 Examples:
 ```js
@@ -89,11 +140,72 @@ triggerEvent(btn, 'click') // triggers 'click' event
 triggerEvent(btn, 'click.thisIsNamespace') // triggers 'click.thisIsNamespace' event
 triggerEvent(btn, '.thisIsNamespace') // triggers all events with 'thisIsNamespace' namespace
 triggerEvent(btn, 'customEvent') // triggers custom event
+triggerEvent(btn, 'customEvent anotherCustomEvent') // triggers custom event
 triggerEvent(btn, 'customEvent', 'someData') // triggers custom event and passed data
 triggerEvent(btn, 'customEvent', {some: 'data'}) // triggers custom event and passed data
 ```
 
-### _selector.js_
+### [_function.js_](https://github.com/kollegorna/js-utils/blob/master/src/function.js)
+
+#### `debounce(delay, fn)`
+
+Debounces execution of a function.
+
+Example:
+```js
+window.addEventListener('resize', debounce(500, () => {
+  // do something expensive here
+}))
+```
+
+#### `throttle(delay, fn)`
+
+Throttles execution of a function.
+
+Example:
+```js
+window.addEventListener('scroll', throttle(500, () => {
+  // do something expensive here
+}))
+```
+
+### [_load-script.js_](https://github.com/kollegorna/js-utils/blob/master/src/load-script.js)
+
+#### `loadScript(src, cache = true)`
+
+Loads script file.
+
+Returns: Promise.
+
+Example:
+```js
+loadScript('jquery.min.js', false)
+  .then(() => {
+    alert(typeof $)
+  }).catch(error => {
+    alert(`Error: ${error}. Try again.`)
+  })
+```
+
+### [_promise.js_](https://github.com/kollegorna/js-utils/blob/master/src/promise.js)
+
+#### `serialPromises(...fns)`
+
+Resolves promises sequentially.
+
+Example:
+```js
+serialPromises(
+  () => loadScript('jquery.min.js'),
+  () => loadScript('jquery-ui.min.js'),
+).then(() => {
+  $('ul').sortable()
+}).catch(error => {
+  // error
+})
+```
+
+### [_selector.js_](https://github.com/kollegorna/js-utils/blob/master/src/selector.js)
 
 #### `getElements(elements)`
 
@@ -109,16 +221,13 @@ closest ancestor (or itself) that matches the `matches` (element|selector).
 Returns an Array of parents of `element` that matches the given `selector`
 up until the `until` matching element|selector.
 
-### _smart-outline.js_
+### [_smart-outline.js_](https://github.com/kollegorna/js-utils/blob/master/src/smart-outline.js)
 
 Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
 
 #### `initSmartOutline([selectors])`
 
-Inits Smart Outline.
-
-Accepts:
-* `selectors` — an array of CSS selectors whose elements to affect. Default value:
+Inits Smart Outline. `selectors` is an array of CSS selectors whose elements to affect. Default value:
 
     ```js
     [
@@ -132,83 +241,6 @@ Accepts:
 #### `haltSmartOutline()`
 
 Halts Smart Outline.
-
-### _function.js_
-
-#### `debounce(delay, fn)`
-
-Debounce execution of a function.
-
-Accepts:
-* `delay` — delay in miliseconds
-* `fn` — function
-
-Example:
-```js
-window.addEventListener('resize', debounce(500, () => {
-  // do something expensive here
-}))
-```
-
-#### `throttle(delay, fn)`
-
-Throttle execution of a function.
-
-Accepts:
-* `delay` — delay in miliseconds
-* `fn` — function
-
-Example:
-```js
-window.addEventListener('scroll', throttle(500, () => {
-  // do something expensive here
-}))
-```
-
-### _load-script.js_
-
-#### `loadScript(src, cache = true)`
-
-Loads script file.
-
-Accepts:
-* `src` — file to load
-* `cache` — load naturally (default) or add a URL parameter to bust the cache
-
-Returns: Promise.
-
-Example:
-```js
-loadScript('jquery.min.js', false)
-  .then(() => {
-    alert(typeof $)
-  }).catch(error => {
-    alert(`Error: ${error}. Try again.`)
-  })
-```
-
-### _promise.js_
-
-#### `serialPromises(...funcs)`
-
-Resolves promises sequentially.
-
-Accepts:
-* `...funcs` — functions as arguments
-
-Returns: Promise.
-
-Example:
-```js
-serialPromises(
-  () => loadScript('jquery.min.js'),
-  () => loadScript('jquery-ui.min.js'),
-).then(() => {
-  $('ul').sortable()
-}).catch(error => {
-  // error
-})
-```
 
 ## Other resources
 
@@ -253,6 +285,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Polyfils
 
-* https://www.npmjs.com/package/element-closest _(polyfills for #Element.closest and #Element.matches)_
-* https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach())_
+* https://www.npmjs.com/package/element-closest _(polyfills for Element.closest and Element.matches)_
+* https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach_
+* https://www.npmjs.com/package/classlist-polyfill _(polyfill for Element.classList)_
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_

@@ -1,6 +1,9 @@
 /*
   ------------------------------------------------------------------------------
   Loads external script file
+
+  @param {String} src The path of the file
+  @param {Bool} cache Cache or bust the cache
 */
 
 const loadScript = (src, cache = true) => {

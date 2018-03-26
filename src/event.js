@@ -11,6 +11,11 @@ const nativeEvents = [
 /*
   ------------------------------------------------------------------------------
   Adds event listener to an element. Using namespaces is available.
+
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
+  @param {String} eventNames Space separated event names with optional namespaces
+  @param {Function} callback The function to execute when the event occurs
+  @param {Object} options [optional] Optional options
 */
 
 const addEventListener = (elements, eventNames, callback, options = false) => {
@@ -43,6 +48,11 @@ const addEventListener = (elements, eventNames, callback, options = false) => {
 /*
   ------------------------------------------------------------------------------
   Removes event listener from an element. Using namespaces is available.
+
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
+  @param {String} eventNames Space separated event names with optional namespaces
+  @param {Function} callback The function to execute when the event occurs
+  @param {Object} options [optional] Optional options
 */
 
 const removeEventListener = (elements, eventName = false, callback = false, options = false) => {
@@ -142,6 +152,10 @@ const removeEventListener = (elements, eventName = false, callback = false, opti
 /*
   ------------------------------------------------------------------------------
   Triggers event on an element. Using namespaces is available.
+
+  @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
+  @param {String} eventNames Space separated event names with optional namespaces
+  @param {Mixed} data The data to pass. Not available for `nativeEvents` events
 */
 
 const triggerEvent = (elements, eventNames, data = null) => {

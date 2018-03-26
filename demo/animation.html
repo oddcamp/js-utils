@@ -68,9 +68,9 @@
 	<script type="module">
 		import { onCssAnimationEnd, onCssTransitionEnd } from '/src/animation.js'
 
-		const el = document.querySelectorAll('.a')
+		const el = document.querySelectorAll('div')
 
-		onCssAnimationEnd(el, () => {alert('a')}, {oncePerAnims: false})
+		onCssAnimationEnd(el, () => {alert('a')}, {oncePerElems: false, oncePerAnims: false})
 	</script>
 
 </body>

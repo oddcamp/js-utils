@@ -46,7 +46,7 @@ const removeClass = (...args) => {
 
 /*
   ------------------------------------------------------------------------------
-  An extended implementation of Element.classList.remove(): removes classname(s)
+  An extended implementation of Element.classList.remove(): toggles classname(s)
   from single or multiple elements
 
   @param {String|Element|NodeList|Array} elements Selector, single or multiple elements

@@ -3,6 +3,7 @@
   Accepts String, Element, NodeList, Array and returns Array of elements
 
   @param {String|Array|Element|NodeList} elements
+  @returns {Array}
 */
 
 const getElements = (elements) => {
@@ -26,10 +27,11 @@ const getElements = (elements) => {
 /*
   ------------------------------------------------------------------------------
   Based on how Element.closest() works. Returns true if `element` has the
-  closest ancestor (or itself) that matches the `matches` (element|selector)
+  closest ancestor (or is itself) that matches the `matches` (element|selector)
 
   @param {String|Element} element
   @param {String|Element} matches
+  @returns {Bool}
 */
 
 const hasClosest = (element, matches) => {
@@ -57,6 +59,7 @@ const hasClosest = (element, matches) => {
   @param {String|Element} element
   @param {String} selector [optional]
   @param {String|Element} until [optional]
+  @returns {Array}
 */
 
 const getParents = (element, selector = '', until = null) => {
