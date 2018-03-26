@@ -13,7 +13,7 @@ A library of ES6 utilities.
 2. Import utils you need to your project, e.g.:
 
     ```js
-    import throttle from "js-utils/src/throttle"
+    import addEventListener from "js-utils/src/event"
     ```
 
 3. Browse [Documentation](#documentation)
@@ -133,15 +133,15 @@ Accepts:
 
 Halts Smart Outline.
 
-### _debounce.js_
+### _function.js_
 
-#### `debounce(delay, func)`
+#### `debounce(delay, fn)`
 
 Debounce execution of a function.
 
 Accepts:
 * `delay` — delay in miliseconds
-* `func` — function
+* `fn` — function
 
 Example:
 ```js
@@ -150,15 +150,13 @@ window.addEventListener('resize', debounce(500, () => {
 }))
 ```
 
-### _throttle.js_
-
-#### `throttle(delay, func)`
+#### `throttle(delay, fn)`
 
 Throttle execution of a function.
 
 Accepts:
 * `delay` — delay in miliseconds
-* `func` — function
+* `fn` — function
 
 Example:
 ```js
