@@ -26,11 +26,13 @@ const getElements = (elements) => {
   Based on how Element.closest() works. Returns true if `element` has the
   closest ancestor (or itself) that matches the `matches` (element|selector)
 
-  @param {Element} element
+  @param {String|Element} element
   @param {String|Element} matches
 */
 
 const hasClosest = (element, matches) => {
+  element = getElements(element)[0]
+
   if(typeof matches === 'string') {
     return element.closest(matches) ? true : false
   }
@@ -49,14 +51,15 @@ const hasClosest = (element, matches) => {
   Returns an Array of parents of `element` that matches the given `selector`
   up until the `until` matching element|selector
 
-  @param {Element} element
+  @param {String|Element} element
   @param {String} selector [optional]
   @param {String|Element} until [optional]
 */
 
 const getParents = (element, selector = '', until = null) => {
-  let parents = []
+  element = getElements(element)[0]
   element = element.parentNode
+  let parents = []
 
   while(element) {
     if(element === document) {
