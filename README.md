@@ -93,6 +93,22 @@ triggerEvent(btn, 'customEvent', 'someData') // triggers custom event and passed
 triggerEvent(btn, 'customEvent', {some: 'data'}) // triggers custom event and passed data
 ```
 
+### _selector.js_
+
+#### `getElements(elements)`
+
+Accepts String, Element, NodeList, Array and returns Array of elements.
+
+#### `hasClosest(element, matches)`
+
+Based on how Element.closest() works. Returns true if `element` has the
+closest ancestor (or itself) that matches the `matches` (element|selector).
+
+#### `getParents(element [, selector = '', until = null])`
+
+Returns an Array of parents of `element` that matches the given `selector`
+up until the `until` matching element|selector.
+
 ### _smart-outline.js_
 
 Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
