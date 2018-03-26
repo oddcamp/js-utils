@@ -9,9 +9,9 @@ const getElements = (elements) => {
   if(typeof elements.length === 'undefined' || elements === window || elements === document) {
     elements = [elements]
   }
-  // NodeList|string
+  // NodeList|Array|String
   else {
-    // string
+    // String
     if(typeof elements === 'string') {
       elements = document.querySelectorAll(elements)
     }
