@@ -223,7 +223,7 @@ up until the `until` matching element|selector.
 
 ### [_smart-outline.js_](https://github.com/kollegorna/js-utils/blob/master/src/smart-outline.js)
 
-Smart Outline hides the outline when interacting with mouse and brings it back when interacting with keyboard.
+Smart Outline hides the outline when interacting with a mouse and brings it back when interacting with a keyboard.
 
 #### `initSmartOutline([selectors])`
 
@@ -237,6 +237,10 @@ Inits Smart Outline. `selectors` is an array of CSS selectors whose elements to 
       'select:focus',
     ]
     ```
+
+#### `showSmartOutline()`
+
+Temporarily reveals outline.
 
 #### `haltSmartOutline()`
 

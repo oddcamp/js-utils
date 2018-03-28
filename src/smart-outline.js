@@ -59,6 +59,15 @@ const initSmartOutline = (selectors) => {
 
 /*
   ------------------------------------------------------------------------------
+  Temporarily reveals outline
+*/
+
+const showSmartOutline = () => {
+  removeOldStyles()
+}
+
+/*
+  ------------------------------------------------------------------------------
   Halts Smart Outline
 */
 
@@ -75,4 +84,5 @@ const haltSmartOutline = () => {
 export {
   initSmartOutline as default,
   haltSmartOutline,
+  showSmartOutline,
 }
