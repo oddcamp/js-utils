@@ -259,6 +259,9 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
 
+### Forms
+* https://github.com/jshjohnson/Choices _(vanilla JS customisable select box/text input plugin)_
+
 ### Gesture
 * https://github.com/hammerjs/hammer.js _(multi-touch gestures)_
 
@@ -278,7 +281,6 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/luruke/barba.js _(fluid and smooth transition between website's pages)_
 
 ### Menus
-
 * https://github.com/osvaldasvalutis/accessiblenav.js _(accessible multi-level dropdown menus)_
 
 ### CSS
