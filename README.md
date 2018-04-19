@@ -46,7 +46,7 @@ onCssAnimationEnd(btns, callbackFunction, {oncePerAnims = false})
 onCssAnimationEnd('.btn', callbackFunction)
 ```
 
-#### `onCssTransitionEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
+#### ``onCssTransitionEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])``
 
 Fires a callback function when CSS transition ends
 
