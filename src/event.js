@@ -47,6 +47,24 @@ const addEventListener = (elements, eventNames, callback, options = false) => {
 
 /*
   ------------------------------------------------------------------------------
+  Delegates event listener to an element. Using namespaces is available.
+
+  @param {String} elements Selector
+  @param {String} eventNames Space separated event names with optional namespaces
+  @param {Function} callback The function to execute when the event occurs
+*/
+
+const delegateEventListener = (selector, eventNames, callback) => {
+  addEventListener(document, eventNames, (e) => {
+    const element = e.target.closest(selector)
+    if(element) {
+      callback(e, element)
+    }
+  })
+}
+
+/*
+  ------------------------------------------------------------------------------
   Removes event listener from an element. Using namespaces is available.
 
   @param {String|Element|NodeList|Array} elements Selector, single or multiple elements
@@ -218,6 +236,7 @@ const triggerEvent = (elements, eventNames, data = null) => {
 
 export {
   addEventListener,
+  delegateEventListener,
   removeEventListener,
   triggerEvent,
 }

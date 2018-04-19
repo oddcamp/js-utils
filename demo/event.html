@@ -38,8 +38,13 @@
 		<button type="button" class="e2">&larr; Trigger custom event that alerts the passed data</button>
 	</p>
 
+    <!-- f -->
+	<p>
+		<button type="button" class="f1">Dynamically insert button with a delegated event listener &rarr;</button>
+	</p>
+
 	<script type="module">
-		import { addEventListener, removeEventListener, triggerEvent } from '/src/event.js'
+		import { addEventListener, removeEventListener, triggerEvent, delegateEventListener } from '/src/event.js'
 
 		// a
 		;(() => {
@@ -115,6 +120,25 @@
 
 			addEventListener(btn, 'customEvent', (e) => {
 				alert(`Data received: ${e.detail}`)
+			})
+		})();
+
+        // f
+		;(() => {
+			const btn = document.querySelector('.f1')
+            let index = 0
+
+			addEventListener(btn, 'click', () => {
+                index++
+                btn.insertAdjacentHTML('afterend', `
+                    <button type="button" class="f2" data-index="${index}">
+                        Click #${index}
+                    </button>
+                `)
+			})
+
+			delegateEventListener('.f2', 'click.xxx', (e, el) => {
+				alert(`Clicked #${el.getAttribute('data-index')}`)
 			})
 		})();
 	</script>

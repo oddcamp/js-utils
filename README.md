@@ -35,7 +35,7 @@ In order to gain a wider browser support, install and import these polyfills in 
 
 ### [_animation.js_](https://github.com/kollegorna/js-utils/blob/master/src/animation.js)
 
-#### ```onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])```
+#### `onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
 
 Fires a callback function when CSS animation ends.
 
@@ -46,7 +46,7 @@ onCssAnimationEnd(btns, callbackFunction, {oncePerAnims = false})
 onCssAnimationEnd('.btn', callbackFunction)
 ```
 
-#### ``onCssTransitionEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])``
+#### `onCssTransitionEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
 
 Fires a callback function when CSS transition ends
 
@@ -113,6 +113,26 @@ addEventListener([btn1, btn2], 'click', doIt)
 addEventListener('.btn', 'click', doIt)
 addEventListener(btn, 'click focus', doIt)
 addEventListener(btn, 'click', doIt, { passive: true })
+```
+
+#### `delegateEventListener(selector, eventNames, callback)`
+
+Delegates the event handler (an equivalent to jQuery's `.live()`).
+
+Examples:
+```js
+delegateEventListener('.btn', 'click', doIt)
+delegateEventListener('.btn', 'click focus', doIt)
+```
+
+In order to remove event handler, use `document` as a target element, e.g.:
+
+```js
+delegateEventListener('.btn', 'click', doIt) // delegate
+removeEventListener(document, 'click', doIt) // remove
+// removing without using the callback function:
+delegateEventListener('.btn', 'click.btnDelegate', doIt) // delegate
+removeEventListener(document, 'click.btnDelegate') // remove
 ```
 
 #### `removeEventListener(elements [, eventName = false, callback = false, options/useCapture = false])`
