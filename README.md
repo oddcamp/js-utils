@@ -35,7 +35,7 @@ In order to gain a wider browser support, install and import these polyfills in 
 
 ### [_animation.js_](https://github.com/kollegorna/js-utils/blob/master/src/animation.js)
 
-#### `onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
+#### ```onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])```
 
 Fires a callback function when CSS animation ends.
 
