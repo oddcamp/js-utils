@@ -4,9 +4,9 @@ import { getElements } from './selector.js'
 
 const manipulateClass = (type, elements, classnames, force = undefined) => {
   elements = getElements(elements)
+  classnames = classnames.split(' ')
 
   elements.forEach((element) => {
-    classnames = classnames.split(' ')
     classnames.forEach((classname) => {
       if(type == 'toggle') {
         element.classList.toggle(classname, force)
