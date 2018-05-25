@@ -270,11 +270,14 @@ Halts Smart Outline.
 
 For more functionality, consider using these vanilla JavaScript libraries:
 
-### Misc
+### Utilities
 * https://github.com/lodash/lodash _(utility library)_
 
 ### DOM manipulation
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
+
+### Modals
+* https://github.com/edenspiekermann/a11y-dialog _(a very lightweight and flexible accessible modal dialog)_
 
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
