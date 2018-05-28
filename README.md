@@ -272,6 +272,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Utilities
 * https://github.com/lodash/lodash _(utility library)_
+* https://allyjs.io _(library simplifying certain accessibility features, functions and behaviors)_
 
 ### DOM manipulation
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
