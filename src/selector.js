@@ -6,7 +6,7 @@
   @returns {Array}
 */
 
-const getElements = (elements) => {
+const getElements = (elements, source = document) => {
   // Element
   if(typeof elements.length === 'undefined' || elements === window || elements === document) {
     elements = [elements]
@@ -15,7 +15,7 @@ const getElements = (elements) => {
   else {
     // String
     if(typeof elements === 'string') {
-      elements = document.querySelectorAll(elements)
+      elements = source.querySelectorAll(elements)
     }
 
     elements = [...elements]
