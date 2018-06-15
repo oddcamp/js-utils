@@ -227,7 +227,7 @@ serialPromises(
 
 ### [_selector.js_](https://github.com/kollegorna/js-utils/blob/master/src/selector.js)
 
-#### `getElements(elements)`
+#### `getElements(elements [, source = document])`
 
 Accepts String, Element, NodeList, Array and returns Array of elements.
 
