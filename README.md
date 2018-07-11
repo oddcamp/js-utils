@@ -207,6 +207,20 @@ loadScript('jquery.min.js', false)
   })
 ```
 
+### [_position.js_](https://github.com/kollegorna/js-utils/blob/master/src/position.js)
+
+#### `getOffset(elements)`
+
+Returns top/left offsets of an element
+
+Returns: Object.
+
+Example:
+```js
+getOffset(container)
+getOffset('.container')
+```
+
 ### [_promise.js_](https://github.com/kollegorna/js-utils/blob/master/src/promise.js)
 
 #### `serialPromises(...fns)`

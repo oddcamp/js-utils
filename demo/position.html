@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+
+	<h1>Position</h1>
+
+	<button type="button" class="a">
+		Show my offset
+	</button>
+
+	<script type="module">
+		import { getOffset } from '/src/position.js'
+
+		const btn = document.querySelector('.a')
+
+		btn.addEventListener('click', (e) => {
+			e.preventDefault()
+			const offset = getOffset(btn)
+			alert(`Top: ${offset.top}. Left: ${offset.left}`)
+		});
+	</script>
+
+</body>
+</html>

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Kollegorna's JavaScript utilities",
   "main": "",
+  "engines": {
+    "node": "<=9.11.2"
+  },
   "scripts": {
     "dev": "gulp"
   },
