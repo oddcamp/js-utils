@@ -108,7 +108,7 @@ Finds cookie by name and returns its value.
 
 Examples:
 ```js
-getCookieValue(btn, _ga)
+getCookieValue('_ga')
 ```
 
 ### [_event.js_](https://github.com/kollegorna/js-utils/blob/master/src/event.js)
