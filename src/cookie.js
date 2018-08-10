@@ -20,4 +20,6 @@ const getCookieValue = (name) => {
   ------------------------------------------------------------------------------
 */
 
-export default getCookieValue
+export {
+  getCookieValue,
+}
