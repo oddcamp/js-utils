@@ -100,6 +100,17 @@ toggleClass(btn, 'btn--green', true)
 toggleClass('.btn', 'btn--disabled btn--grey')
 ```
 
+### [_cookie.js_](https://github.com/kollegorna/js-utils/blob/master/src/cookie.js)
+
+#### `getCookieValue(name)`
+
+Finds cookie by name and returns its value.
+
+Examples:
+```js
+getCookieValue(btn, _ga)
+```
+
 ### [_event.js_](https://github.com/kollegorna/js-utils/blob/master/src/event.js)
 
 #### `addEventListener(elements, eventNames, callback [, options/useCapture = false])`
