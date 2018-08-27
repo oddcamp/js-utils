@@ -304,6 +304,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### DOM manipulation
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
+* https://github.com/RubaXa/Sortable _(a library for reorderable drag-and-drop lists)_
 
 ### Modals
 * https://github.com/edenspiekermann/a11y-dialog _(a very lightweight and flexible accessible modal dialog)_
