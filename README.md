@@ -348,3 +348,4 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach_
 * https://www.npmjs.com/package/classlist-polyfill _(polyfill for Element.classList)_
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
+* https://githubengineering.com/removing-jquery-from-github-frontend/#polyfills _(a nice list of polyfills)_
