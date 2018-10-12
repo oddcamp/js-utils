@@ -301,6 +301,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Accessibility
 * https://github.com/davidtheclark/focus-trap _(trap focus within a DOM node)_
+* https://github.com/edenspiekermann/a11y-toggle _(accessible content toggles)_
 
 ### DOM manipulation
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
