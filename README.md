@@ -1,4 +1,4 @@
-e# Kollegorna's JavaScript utilities
+# Kollegorna's JavaScript utilities
 
 A library of ES6 utilities.
 
