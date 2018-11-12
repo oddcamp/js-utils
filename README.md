@@ -1,4 +1,4 @@
-# Kollegorna's JavaScript utilities
+e# Kollegorna's JavaScript utilities
 
 A library of ES6 utilities.
 
@@ -325,7 +325,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Scroll
 * https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
 * https://github.com/dbrekalo/whenInViewport _(handle elements as they enter viewport)_
-* https://github.com/zengabor/zenscroll _(smooth-scroll web pages and other scrollable elements)_
+* https://github.com/KoryNunn/scroll-into-view _(scrolls an element into view if possible)_
 
 ### Charts
 * https://frappe.github.io/charts _(simple, responsive, modern charts library)_
