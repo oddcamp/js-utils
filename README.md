@@ -311,10 +311,15 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/edenspiekermann/a11y-dialog _(a very lightweight and flexible accessible modal dialog)_
 * https://github.com/Ghosh/micromodal _(tiny javascript library for creating accessible modal dialogs)_
 
+### Tooltips
+* https://github.com/atomiks/tippyjs _(highly customizable vanilla JS tooltip/popover library)_
+* https://github.com/FezVrasta/popper.js _(a kickass library to manage your poppers)_
+
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
 
-### Forms
+### Forms and inputs
+* https://scottaohara.github.io/a11y_styled_form_controls _(various styled accessible form controls)_
 * https://github.com/jshjohnson/Choices _(vanilla JS customisable select box/text input plugin)_
 
 ### Gesture
@@ -322,6 +327,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Calendar
 * https://github.com/dbushell/Pikaday _(lightweight, modular CSS datepicker)_
+* https://github.com/flatpickr/flatpickr _(lightweight, powerful javascript datetimepicker with no dependencies)_
 
 ### Scroll
 * https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
@@ -345,7 +351,6 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://www.npmjs.com/package/fitvids _(responsive videos)_
 
 ### Polyfils
-
 * https://www.npmjs.com/package/element-closest _(polyfills for Element.closest and Element.matches)_
 * https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach_
 * https://www.npmjs.com/package/classlist-polyfill _(polyfill for Element.classList)_
