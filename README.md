@@ -309,6 +309,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 ### Modals
 * https://github.com/edenspiekermann/a11y-dialog _(a very lightweight and flexible accessible modal dialog)_
+* https://github.com/Ghosh/micromodal _(tiny javascript library for creating accessible modal dialogs)_
 
 ### Validation
 * https://github.com/chriso/validator.js _(string validators and sanitizers)_
