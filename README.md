@@ -336,6 +336,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://basicscroll.electerious.com _(parallax scrolling with CSS variables)_
 * https://github.com/dbrekalo/whenInViewport _(handle elements as they enter viewport)_
 * https://github.com/KoryNunn/scroll-into-view _(scrolls an element into view if possible)_
+* https://github.com/buzinas/simple-scrollbar _(custom scrollbar cross-browser)_
 
 ### Charts
 * https://frappe.github.io/charts _(simple, responsive, modern charts library)_
