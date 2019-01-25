@@ -303,6 +303,9 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/davidtheclark/focus-trap _(trap focus within a DOM node)_
 * https://github.com/edenspiekermann/a11y-toggle _(accessible content toggles)_
 
+### Performance
+* https://github.com/GoogleChromeLabs/quicklink _(faster subsequent page-loads by prefetching in-viewport links during idle time)_
+
 ### DOM manipulation
 * https://github.com/Sjeiti/TinySort _(a small script that sorts HTML elements)_
 * https://github.com/RubaXa/Sortable _(a library for reorderable drag-and-drop lists)_
