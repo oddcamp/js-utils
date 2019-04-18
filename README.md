@@ -361,3 +361,4 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 * https://www.npmjs.com/package/array.findindex _(lightweight Array.prototype.findIndex polyfill)_
 * https://githubengineering.com/removing-jquery-from-github-frontend/#polyfills _(a nice list of polyfills)_
+* https://github.com/github/fetch _(a window.fetch JavaScript polyfill)_
