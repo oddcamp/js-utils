@@ -19,9 +19,10 @@ A library of ES6 utilities.
 3. Browse [Documentation](#documentation)
 
 In order to gain a wider browser support, install and import these polyfills in your project:
-  - [element-closest](https://www.npmjs.com/package/element-closest) _(polyfills for Element.closest and Element.matches)_
-  - [nodelist-foreach-polyfill](https://www.npmjs.com/package/nodelist-foreach-polyfill) _(polyfill for Nodelist.prototype.forEach())_
-  - [classlist-polyfill](https://www.npmjs.com/package/classlist-polyfill) _(polyfill for Element.classList)_
+  - [Element.closest / Element.matches](https://www.npmjs.com/package/element-closest)
+  - [Nodelist.prototype.forEach](https://www.npmjs.com/package/nodelist-foreach-polyfill)
+  - [Element.classList](https://www.npmjs.com/package/classlist-polyfill)
+  - [CustomEvent](https://www.npmjs.com/package/custom-event-polyfill)
 
 ## Development
 
@@ -362,3 +363,4 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://www.npmjs.com/package/array.findindex _(lightweight Array.prototype.findIndex polyfill)_
 * https://githubengineering.com/removing-jquery-from-github-frontend/#polyfills _(a nice list of polyfills)_
 * https://github.com/github/fetch _(a window.fetch JavaScript polyfill)_
+* https://www.npmjs.com/package/custom-event-polyfill[CustomEvent] _(a polyfill for creating CustomEvents on IE9+)_
