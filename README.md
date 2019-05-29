@@ -13,7 +13,7 @@ A library of ES6 utilities.
 2. Import utils you need to your project, e.g.:
 
     ```js
-    import addEventListener from "js-utils/src/event"
+    import { addEventListener } from "js-utils/src/event"
     ```
 
 3. Browse [Documentation](#documentation)
