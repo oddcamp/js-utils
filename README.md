@@ -362,7 +362,8 @@ For more functionality, consider using these vanilla JavaScript libraries:
 * https://www.npmjs.com/package/array.findindex _(lightweight Array.prototype.findIndex polyfill)_
 * https://github.com/lazd/scopedQuerySelectorShim _(shims that enable the use of :scope)_
 * https://github.com/github/fetch _(a window.fetch JavaScript polyfill)_
-* https://www.npmjs.com/package/custom-event-polyfill[CustomEvent] _(a polyfill for CustomEvents on IE9+)_
+* https://www.npmjs.com/package/custom-event-polyfill _(a polyfill for CustomEvents on IE9+)_
+* https://www.npmjs.com/package/new-event-polyfill _(new Event() polyfill)_
 * https://github.com/jonathantneal/svg4everybody _(adds SVG External Content support to all browsers)_
 * https://www.npmjs.com/package/element-dataset _(polyfills the HTMLElement.dataset property)_
 * https://githubengineering.com/removing-jquery-from-github-frontend/#polyfills _(a nice list of polyfills)_
