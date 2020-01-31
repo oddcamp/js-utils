@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm test
+#      - run: npm ci
+#      - run: npm test
 
   publish-gpr:
     needs: build
@@ -26,7 +26,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           scope: '@kollegorna'
-      - run: npm ci
+#      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GPR_AUTH_TOKEN}}
