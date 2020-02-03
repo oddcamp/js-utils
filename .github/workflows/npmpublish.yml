@@ -29,6 +29,7 @@ jobs:
 
       - name: Publish the package to npmjs
         run: |
+          rm .npmrc
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm config set scope "@kollegorna"
           npm publish
