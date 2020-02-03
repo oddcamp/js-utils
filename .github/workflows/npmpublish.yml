@@ -25,7 +25,6 @@ jobs:
           before_install: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
       - run: |
-          npm init --scope=@kollegorna
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
