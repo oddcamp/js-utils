@@ -21,7 +21,8 @@ jobs:
 
       - name: Install nodejs
         uses: asdf-vm/actions/install@v1.0.0
-        before_install: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+        with:
+          before_install: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
       - run: |
           npm init --scope=@kollegorna
