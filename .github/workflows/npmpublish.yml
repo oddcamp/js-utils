@@ -1,14 +1,8 @@
 name: Node.js Package
 
 on:
-  pull_request:
-    branches:
-      - feat/add-npm-publish
-  push:
-    branches:
-      - feat/add-npm-publish
-#  release:
-#    types: [created]
+  release:
+    types: [created]
 
 jobs:
   build:
