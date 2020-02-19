@@ -21,10 +21,11 @@
   "homepage": "https://github.com/kollegorna/js-utils#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
-    "eslint-plugin-import": "^2.8.0",
-    "express": "^4.16.2",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^4.0.2",
+    "eslint-plugin-import": "^2.20.1",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-spawn": "^0.4.5",
     "path": "^0.12.7"
   },
   "dependencies": {},
