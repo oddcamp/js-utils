@@ -1,10 +1,10 @@
 {
   "name": "@kollegorna/js-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kollegorna's JavaScript utilities",
   "main": "",
   "engines": {
-    "node": "<=9.11.2"
+    "node": ">=8.0.0"
   },
   "scripts": {
     "dev": "gulp"
