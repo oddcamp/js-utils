@@ -8,7 +8,7 @@
 
 const getElements = (elements, source = document) => {
   // Element
-  if(typeof elements.length === 'undefined' || elements === window || elements === document) {
+  if(typeof elements === 'object' || elements === window || elements === document) {
     elements = [elements]
   }
   // NodeList|Array|String
