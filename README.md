@@ -326,6 +326,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 - https://github.com/lodash/lodash _(utility library)_
 - https://allyjs.io _(library simplifying certain accessibility features, functions and behaviors)_
 — https://www.npmjs.com/package/common-tags _(commonly used template literal tag functions)_
+- https://github.com/mynamesleon/aria-tablist _(WCAG compliant tablists, also great for accordions)_
 
 ### Accessibility
 
