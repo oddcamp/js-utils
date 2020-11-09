@@ -7,21 +7,20 @@
 */
 
 const getElements = (elements, source = document) => {
+  if(typeof elements === 'string') {
+    return [...source.querySelectorAll(elements)]
+  }
+
+  if(isNodeList(elements)) {
+    return [...elements]
+  }
+
+  if(Array.isArray(elements)) {
+    return elements
+  }
+
   // Element
-  if(typeof elements === 'object' || elements === window || elements === document) {
-    elements = [elements]
-  }
-  // NodeList|Array|String
-  else {
-    // String
-    if(typeof elements === 'string') {
-      elements = source.querySelectorAll(elements)
-    }
-
-    elements = [...elements]
-  }
-
-  return elements
+  return [elements]
 }
 
 /*
@@ -94,10 +93,28 @@ const getParents = (element, selector = '', until = null) => {
 
 /*
   ------------------------------------------------------------------------------
+  Checks if provided `nodes` is a type of NodeList
+
+  @param {Any} nodes
+  @returns {Bool}
+*/
+
+const isNodeList = (nodes) => {
+  const stringRepr = Object.prototype.toString.call(nodes);
+
+  return typeof nodes === 'object' &&
+    /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
+    (typeof nodes.length === 'number') &&
+    (nodes.length === 0 || (typeof nodes[0] === "object" && nodes[0].nodeType > 0));
+}
+
+/*
+  ------------------------------------------------------------------------------
 */
 
 export {
   getElements,
   hasClosest,
   getParents,
+  isNodeList,
 }
