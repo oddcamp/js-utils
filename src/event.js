@@ -19,10 +19,10 @@ const nativeEvents = [
 */
 
 const addEventListener = (elements, eventNames, callback, options = false) => {
-
   elements = getElements(elements)
 
   elements.forEach((element) => {
+    // eslint-disable-next-line no-prototype-builtins
     if(!element.hasOwnProperty('registeredEvents')) {
       element.registeredEvents = []
     }
@@ -30,15 +30,17 @@ const addEventListener = (elements, eventNames, callback, options = false) => {
     eventNames.split(' ').forEach((eventName) => {
       const [eventNameType] = eventName.split('.')
 
+      const theCallback = (...args) => callback(...args, element)
+
       element.registeredEvents.push({
         eventName: eventName,
-        callback: callback,
+        callback: theCallback,
         options: options,
       })
 
       element.addEventListener(
         eventNameType,
-        callback,
+        theCallback,
         options
       )
     })
@@ -78,6 +80,7 @@ const removeEventListener = (elements, eventName = false, callback = false, opti
   elements = getElements(elements)
 
   elements.forEach((element) => {
+    // eslint-disable-next-line no-prototype-builtins
     if(!element.hasOwnProperty('registeredEvents')) {
       return
     }
@@ -186,6 +189,7 @@ const triggerEvent = (elements, eventNames, data = null) => {
       let eventTriggered = false
 
       // trigger registered events
+      // eslint-disable-next-line no-prototype-builtins
       if(element.hasOwnProperty('registeredEvents')) {
         let eventsTriggered = []
 
