@@ -1,7 +1,7 @@
 {
-  "name": "@kollegorna/js-utils",
+  "name": "@oddcamp/js-utils",
   "version": "1.0.7",
-  "description": "Kollegorna's JavaScript utilities",
+  "description": "Odd Camp's JavaScript utilities",
   "main": "",
   "engines": {
     "node": ">=8.0.0"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kollegorna/js-utils.git"
+    "url": "git+https://github.com/oddcamp/js-utils.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kollegorna/js-utils/issues"
+    "url": "https://github.com/oddcamp/js-utils/issues"
   },
-  "homepage": "https://github.com/kollegorna/js-utils#readme",
+  "homepage": "https://github.com/oddcamp/js-utils#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
     "eslint-plugin-import": "^2.20.1",
