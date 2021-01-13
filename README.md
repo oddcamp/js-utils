@@ -1,4 +1,4 @@
-# Kollegorna's JavaScript utilities
+# Odd Camp's JavaScript utilities
 
 A library of ES6 utilities.
 
@@ -9,7 +9,7 @@ A library of ES6 utilities.
 
 ## Usage
 
-1. Install with `$ yarn add @kollegorna/js-utils`.
+1. Install with `$ yarn add @oddcamp/js-utils`.
 2. Import utils you need to your project, e.g.:
 
    ```js
@@ -35,7 +35,7 @@ In order to gain a wider browser support, install and import these polyfills in 
 
 ## Documentation
 
-### [_animation.js_](https://github.com/kollegorna/js-utils/blob/master/src/animation.js)
+### [_animation.js_](https://github.com/oddcamp/js-utils/blob/master/src/animation.js)
 
 #### `onCssAnimationEnd(elements, callback [, options = { continuous = false, oncePerElems = true, oncePerAnims = true }])`
 
@@ -69,7 +69,7 @@ Cleans all CSS animation end event listeners
 
 Cleans all CSS transition end event listeners
 
-### [_attribute.js_](https://github.com/kollegorna/js-utils/blob/master/src/attribute.js)
+### [_attribute.js_](https://github.com/oddcamp/js-utils/blob/master/src/attribute.js)
 
 #### `addClass(elements, classnames)`
 
@@ -107,7 +107,7 @@ toggleClass(btn, "btn--green", true);
 toggleClass(".btn", "btn--disabled btn--grey");
 ```
 
-### [_cookie.js_](https://github.com/kollegorna/js-utils/blob/master/src/cookie.js)
+### [_cookie.js_](https://github.com/oddcamp/js-utils/blob/master/src/cookie.js)
 
 #### `getCookieValue(name)`
 
@@ -119,7 +119,7 @@ Examples:
 getCookieValue("_ga");
 ```
 
-### [_event.js_](https://github.com/kollegorna/js-utils/blob/master/src/event.js)
+### [_event.js_](https://github.com/oddcamp/js-utils/blob/master/src/event.js)
 
 #### `addEventListener(elements, eventNames, callback [, options/useCapture = false])`
 
@@ -188,7 +188,7 @@ triggerEvent(btn, "customEvent", "someData"); // triggers custom event and passe
 triggerEvent(btn, "customEvent", { some: "data" }); // triggers custom event and passed data
 ```
 
-### [_function.js_](https://github.com/kollegorna/js-utils/blob/master/src/function.js)
+### [_function.js_](https://github.com/oddcamp/js-utils/blob/master/src/function.js)
 
 #### `debounce(delay, fn)`
 
@@ -220,7 +220,7 @@ window.addEventListener(
 );
 ```
 
-### [_load-script.js_](https://github.com/kollegorna/js-utils/blob/master/src/load-script.js)
+### [_load-script.js_](https://github.com/oddcamp/js-utils/blob/master/src/load-script.js)
 
 #### `loadScript(src, cache = true)`
 
@@ -235,12 +235,12 @@ loadScript("jquery.min.js", false)
   .then(() => {
     alert(typeof $);
   })
-  .catch(error => {
+  .catch((error) => {
     alert(`Error: ${error}. Try again.`);
   });
 ```
 
-### [_position.js_](https://github.com/kollegorna/js-utils/blob/master/src/position.js)
+### [_position.js_](https://github.com/oddcamp/js-utils/blob/master/src/position.js)
 
 #### `getOffset(elements)`
 
@@ -255,7 +255,7 @@ getOffset(container);
 getOffset(".container");
 ```
 
-### [_promise.js_](https://github.com/kollegorna/js-utils/blob/master/src/promise.js)
+### [_promise.js_](https://github.com/oddcamp/js-utils/blob/master/src/promise.js)
 
 #### `serialPromises(...fns)`
 
@@ -271,12 +271,12 @@ serialPromises(
   .then(() => {
     $("ul").sortable();
   })
-  .catch(error => {
+  .catch((error) => {
     // error
   });
 ```
 
-### [_selector.js_](https://github.com/kollegorna/js-utils/blob/master/src/selector.js)
+### [_selector.js_](https://github.com/oddcamp/js-utils/blob/master/src/selector.js)
 
 #### `getElements(elements [, source = document])`
 
@@ -292,7 +292,7 @@ closest ancestor (or itself) that matches the `matches` (element|selector).
 Returns an Array of parents of `element` that matches the given `selector`
 up until the `until` matching element|selector.
 
-### [_smart-outline.js_](https://github.com/kollegorna/js-utils/blob/master/src/smart-outline.js)
+### [_smart-outline.js_](https://github.com/oddcamp/js-utils/blob/master/src/smart-outline.js)
 
 Smart Outline hides the outline when interacting with a mouse and brings it back when interacting with a keyboard.
 
@@ -325,7 +325,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 
 - https://github.com/lodash/lodash _(utility library)_
 - https://allyjs.io _(library simplifying certain accessibility features, functions and behaviors)_
-— https://www.npmjs.com/package/common-tags _(commonly used template literal tag functions)_
+  — https://www.npmjs.com/package/common-tags _(commonly used template literal tag functions)_
 - https://github.com/mynamesleon/aria-tablist _(WCAG compliant tablists, also great for accordions)_
 
 ### Accessibility
