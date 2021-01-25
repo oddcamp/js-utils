@@ -401,6 +401,7 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Polyfils
 
 - https://www.npmjs.com/package/element-closest _(polyfills for Element.closest and Element.matches)_
+- https://www.npmjs.com/package/element-remove _(polyfill for Element.remove)
 - https://www.npmjs.com/package/nodelist-foreach-polyfill _(polyfill for Nodelist.prototype.forEach_
 - https://www.npmjs.com/package/classlist-polyfill _(polyfill for Element.classList)_
 - https://www.npmjs.com/package/array.findindex _(lightweight Array.prototype.findIndex polyfill)_
