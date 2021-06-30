@@ -1,6 +1,6 @@
 {
   "name": "@oddcamp/js-utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Odd Camp's JavaScript utilities",
   "main": "",
   "engines": {
@@ -21,11 +21,11 @@
   "homepage": "https://github.com/oddcamp/js-utils#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.23.4",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
-    "gulp-spawn": "^0.4.5",
+    "gulp-spawn": "^1.0.0",
     "path": "^0.12.7"
   },
   "dependencies": {},
