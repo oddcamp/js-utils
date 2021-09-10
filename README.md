@@ -324,12 +324,13 @@ For more functionality, consider using these vanilla JavaScript libraries:
 ### Utilities
 
 - https://github.com/lodash/lodash _(utility library)_
-- https://allyjs.io _(library simplifying certain accessibility features, functions and behaviors)_
-  — https://www.npmjs.com/package/common-tags _(commonly used template literal tag functions)_
-- https://github.com/mynamesleon/aria-tablist _(WCAG compliant tablists, also great for accordions)_
+— https://www.npmjs.com/package/common-tags _(commonly used template literal tag functions)_
+- https://www.npmjs.com/package/nanoid _(a tiny, secure, URL-friendly, unique string ID generator)_
 
 ### Accessibility
 
+- https://allyjs.io _(library simplifying certain accessibility features, functions and behaviors)_
+- https://github.com/mynamesleon/aria-tablist _(WCAG compliant tablists, also great for accordions)_
 - https://github.com/davidtheclark/focus-trap _(trap focus within a DOM node)_
 - https://github.com/edenspiekermann/a11y-toggle _(accessible content toggles)_
 
