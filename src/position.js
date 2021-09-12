@@ -1,4 +1,4 @@
-import { getElements } from './selector.js'
+import { getElements } from "./selector.js"
 
 /*
   ------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ import { getElements } from './selector.js'
 const getOffset = (elements) => {
   const element = getElements(elements)
 
-  if(!element.length) {
+  if (!element.length) {
     return null
   }
 
@@ -27,6 +27,4 @@ const getOffset = (elements) => {
   ------------------------------------------------------------------------------
 */
 
-export {
-  getOffset,
-}
+export { getOffset }

@@ -1,17 +1,16 @@
-import { getElements } from './selector.js'
+import { getElements } from "./selector.js"
 
 // local functions
 
 const manipulateClass = (type, elements, classnames, force = undefined) => {
   elements = getElements(elements)
-  classnames = classnames.split(' ')
+  classnames = classnames.split(` `)
 
   elements.forEach((element) => {
     classnames.forEach((classname) => {
-      if(type == 'toggle') {
+      if (type == `toggle`) {
         element.classList.toggle(classname, force)
-      }
-      else {
+      } else {
         element.classList[type](classname)
       }
     })
@@ -19,9 +18,7 @@ const manipulateClass = (type, elements, classnames, force = undefined) => {
 }
 
 const getElement = (element) => {
-  return typeof element === 'string'
-    ? document.querySelector(element)
-    : element
+  return typeof element === `string` ? document.querySelector(element) : element
 }
 
 /*
@@ -34,7 +31,7 @@ const getElement = (element) => {
 */
 
 const addClass = (...args) => {
-  manipulateClass('add', ...args)
+  manipulateClass(`add`, ...args)
 }
 
 /*
@@ -47,7 +44,7 @@ const addClass = (...args) => {
 */
 
 const removeClass = (...args) => {
-  manipulateClass('remove', ...args)
+  manipulateClass(`remove`, ...args)
 }
 
 /*
@@ -61,7 +58,7 @@ const removeClass = (...args) => {
 */
 
 const toggleClass = (...args) => {
-  manipulateClass('toggle', ...args)
+  manipulateClass(`toggle`, ...args)
 }
 
 /*
