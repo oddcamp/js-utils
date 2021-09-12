@@ -13,8 +13,13 @@
 	</div>
 
 	<script type="module">
-		import { toggleClass } from '/src/attribute.js'
-		toggleClass('.a', 'c', false)
+		import { toggleClass, containsAnyClass, containsAllClasses } from '/src/attribute.js'
+
+        toggleClass('.a', 'c', false)
+
+        console.log('containsAnyClass', containsAnyClass('.a', 'b c', false))
+
+        console.log('containsAllClasses', containsAllClasses('.a', 'a b c', false))
 	</script>
 
 </body>

@@ -8,12 +8,11 @@
 */
 
 const serialPromises = (...fns) => {
-
   return fns.reduce(
-    (promise, fn) => promise.then(result => fn().then(Array.prototype.concat.bind(result))),
+    (promise, fn) =>
+      promise.then((result) => fn().then(Array.prototype.concat.bind(result))),
     Promise.resolve([])
   )
-
 }
 
 /*

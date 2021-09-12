@@ -7,15 +7,15 @@
 */
 
 const getElements = (elements, source = document) => {
-  if(typeof elements === 'string') {
+  if (typeof elements === `string`) {
     return [...source.querySelectorAll(elements)]
   }
 
-  if(isNodeList(elements)) {
+  if (isNodeList(elements)) {
     return [...elements]
   }
 
-  if(Array.isArray(elements)) {
+  if (Array.isArray(elements)) {
     return elements
   }
 
@@ -36,12 +36,11 @@ const getElements = (elements, source = document) => {
 const hasClosest = (element, matches) => {
   element = getElements(element)[0]
 
-  if(typeof matches === 'string') {
+  if (typeof matches === `string`) {
     return element.closest(matches) ? true : false
-  }
-  else {
-    while(element) {
-      if(element === matches) {
+  } else {
+    while (element) {
+      if (element === matches) {
         return true
       }
       element = element.parentNode
@@ -61,27 +60,26 @@ const hasClosest = (element, matches) => {
   @returns {Array}
 */
 
-const getParents = (element, selector = '', until = null) => {
+const getParents = (element, selector = ``, until = null) => {
   element = getElements(element)[0]
   element = element.parentNode
-  let parents = []
+  const parents = []
 
-  while(element) {
-    if(element === document) {
+  while (element) {
+    if (element === document) {
       break
     }
 
-    if(!selector || element.matches(selector)) {
+    if (!selector || element.matches(selector)) {
       parents.push(element)
     }
 
-    if(until) {
-      if(typeof until === 'string') {
-        if(element.matches(until)) {
+    if (until) {
+      if (typeof until === `string`) {
+        if (element.matches(until)) {
           break
         }
-      }
-      else if(element === until) {
+      } else if (element === until) {
         break
       }
     }
@@ -100,21 +98,19 @@ const getParents = (element, selector = '', until = null) => {
 */
 
 const isNodeList = (nodes) => {
-  const stringRepr = Object.prototype.toString.call(nodes);
+  const stringRepr = Object.prototype.toString.call(nodes)
 
-  return typeof nodes === 'object' &&
+  return (
+    typeof nodes === `object` &&
     /^\[object (HTMLCollection|NodeList|Object)\]$/.test(stringRepr) &&
-    (typeof nodes.length === 'number') &&
-    (nodes.length === 0 || (typeof nodes[0] === "object" && nodes[0].nodeType > 0));
+    typeof nodes.length === `number` &&
+    (nodes.length === 0 ||
+      (typeof nodes[0] === `object` && nodes[0].nodeType > 0))
+  )
 }
 
 /*
   ------------------------------------------------------------------------------
 */
 
-export {
-  getElements,
-  hasClosest,
-  getParents,
-  isNodeList,
-}
+export { getElements, hasClosest, getParents, isNodeList }

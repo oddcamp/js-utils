@@ -1,21 +1,24 @@
-import { getElements } from './selector.js'
+import { getElements } from "./selector.js"
 
 // local functions
 
 const manipulateClass = (type, elements, classnames, force = undefined) => {
   elements = getElements(elements)
-  classnames = classnames.split(' ')
+  classnames = classnames.split(` `)
 
   elements.forEach((element) => {
     classnames.forEach((classname) => {
-      if(type == 'toggle') {
+      if (type == `toggle`) {
         element.classList.toggle(classname, force)
-      }
-      else {
+      } else {
         element.classList[type](classname)
       }
     })
   })
+}
+
+const getElement = (element) => {
+  return typeof element === `string` ? document.querySelector(element) : element
 }
 
 /*
@@ -28,7 +31,7 @@ const manipulateClass = (type, elements, classnames, force = undefined) => {
 */
 
 const addClass = (...args) => {
-  manipulateClass('add', ...args)
+  manipulateClass(`add`, ...args)
 }
 
 /*
@@ -41,7 +44,7 @@ const addClass = (...args) => {
 */
 
 const removeClass = (...args) => {
-  manipulateClass('remove', ...args)
+  manipulateClass(`remove`, ...args)
 }
 
 /*
@@ -55,7 +58,49 @@ const removeClass = (...args) => {
 */
 
 const toggleClass = (...args) => {
-  manipulateClass('toggle', ...args)
+  manipulateClass(`toggle`, ...args)
+}
+
+/*
+  ------------------------------------------------------------------------------
+  Check if an element contains at least one classname
+
+  @param {String|Element} elements Selector, single element
+  @param {String} classnames Space separated if multiple
+*/
+
+const containsAnyClass = (element, classnames) => {
+  element = getElement(element)
+  if (!element) return null
+
+  let contains = false
+  classnames.split(` `).some((classname) => {
+    contains = element.classList.contains(classname)
+    return contains
+  })
+
+  return contains
+}
+
+/*
+  ------------------------------------------------------------------------------
+  Check if an element contains all classnames
+
+  @param {String|Element} elements Selector, single element
+  @param {String} classnames Space separated if multiple
+*/
+
+const containsAllClasses = (element, classnames) => {
+  element = getElement(element)
+  if (!element) return null
+
+  let contains = false
+  classnames.split(` `).every((classname) => {
+    contains = element.classList.contains(classname)
+    return contains
+  })
+
+  return contains
 }
 
 /*
@@ -66,4 +111,6 @@ export {
   addClass,
   removeClass,
   toggleClass,
+  containsAnyClass,
+  containsAllClasses,
 }

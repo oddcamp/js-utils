@@ -1,33 +1,33 @@
-import { addEventListener, removeEventListener } from './event.js'
-import { getElements } from './selector.js'
+import { addEventListener, removeEventListener } from "./event.js"
+import { getElements } from "./selector.js"
 
 // local variables
 
 const animationEventNames = {
-  'animation': 'animationend',
-  'OAnimation': 'oAnimationEnd',
-  'MozAnimation': 'animationend',
-  'WebkitAnimation': 'webkitAnimationEnd',
+  animation: `animationend`,
+  OAnimation: `oAnimationEnd`,
+  MozAnimation: `animationend`,
+  WebkitAnimation: `webkitAnimationEnd`,
 }
 const transitionEventNames = {
-  'transition': 'transitionend',
-  'OTransition': 'oTransitionEnd',
-  'MozTransition': 'transitionend',
-  'WebkitTransition': 'webkitTransitionEnd',
+  transition: `transitionend`,
+  OTransition: `oTransitionEnd`,
+  MozTransition: `transitionend`,
+  WebkitTransition: `webkitTransitionEnd`,
 }
 
-let animationEventName = ''
-let transitionEventName = ''
+let animationEventName = ``
+let transitionEventName = ``
 
-const el = document.createElement('fakeelement')
-for(let e in animationEventNames) {
-  if(el.style[e] !== undefined) {
+const el = document.createElement(`fakeelement`)
+for (const e in animationEventNames) {
+  if (el.style[e] !== undefined) {
     animationEventName = `${animationEventNames[e]}.onCssAnimationEnd`
     break
   }
 }
-for(let e in transitionEventNames) {
-  if(el.style[e] !== undefined) {
+for (const e in transitionEventNames) {
+  if (el.style[e] !== undefined) {
     transitionEventName = `${transitionEventNames[e]}.onCssTransitionEnd`
     break
   }
@@ -39,56 +39,55 @@ const onEnd = (
   type,
   elements,
   callback,
-  {
-    continuous = false,
-    oncePerElems = true,
-    oncePerAnims = true,
-  } = {}
+  { continuous = false, oncePerElems = true, oncePerAnims = true } = {}
 ) => {
-
-  if(!oncePerAnims) {
+  if (!oncePerAnims) {
     oncePerElems = false
   }
 
   elements = getElements(elements)
-  const eventName = type == 'animation' ? animationEventName : transitionEventName
+  const eventName =
+    type == `animation` ? animationEventName : transitionEventName
   let animationsCountTotal = 0
   let animationsPassedTotal = 0
 
   elements.forEach((element) => {
-    const animationsCount = (
-      window
-        .getComputedStyle(element)[type == 'animation' ? 'animation-name' : 'transition-property']
-          .match(/,/g) || []
-    ).length + 1
+    const animationsCount =
+      (
+        window
+          .getComputedStyle(element)
+          [
+            type == `animation` ? `animation-name` : `transition-property`
+          ].match(/,/g) || []
+      ).length + 1
 
     let animationsPassed = 0
     animationsCountTotal += animationsCount
 
     addEventListener(element, eventName, (e) => {
-      if(e.target !== element) {
+      if (e.target !== element) {
         return
       }
 
       animationsPassedTotal++
       animationsPassed++
 
-      if(!continuous && animationsCountTotal == animationsPassedTotal) {
+      if (!continuous && animationsCountTotal == animationsPassedTotal) {
         removeEventListener(element, eventName)
       }
 
-      if(
+      if (
         continuous ||
-        !continuous && (
-          oncePerElems && animationsCountTotal == animationsPassedTotal ||
-          !oncePerElems && (!oncePerAnims || oncePerAnims && animationsCount == animationsPassed)
-        )
-      ){
+        (!continuous &&
+          ((oncePerElems && animationsCountTotal == animationsPassedTotal) ||
+            (!oncePerElems &&
+              (!oncePerAnims ||
+                (oncePerAnims && animationsCount == animationsPassed)))))
+      ) {
         callback(element)
       }
     })
   })
-
 }
 
 /*
@@ -116,7 +115,7 @@ const onEnd = (
 */
 
 const onCssAnimationEnd = (...args) => {
-  onEnd('animation', ...args)
+  onEnd(`animation`, ...args)
 }
 
 /*
@@ -144,7 +143,7 @@ const onCssAnimationEnd = (...args) => {
 */
 
 const onCssTransitionEnd = (...args) => {
-  onEnd('transition', ...args)
+  onEnd(`transition`, ...args)
 }
 
 /*

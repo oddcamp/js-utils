@@ -1,75 +1,47 @@
 {
   "name": "@oddcamp/js-utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Odd Camp's JavaScript utilities",
+  "license": "MIT",
+  "author": "Odd Camp",
   "main": "",
   "engines": {
     "node": ">=8.0.0"
   },
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "lint-js": "eslint ./src --ext js",
+    "format-js": "eslint ./src --ext js --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oddcamp/js-utils.git"
   },
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/oddcamp/js-utils/issues"
   },
   "homepage": "https://github.com/oddcamp/js-utils#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
-    "eslint-plugin-import": "^2.23.4",
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-flowtype": "^5.9.2",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-html-erb": "^1.0.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-spawn": "^1.0.0",
     "path": "^0.12.7"
   },
-  "dependencies": {},
-  "eslintConfig": {
-    "root": true,
-    "extends": "eslint:recommended",
-    "env": {
-      "node": true,
-      "es6": true,
-      "amd": true,
-      "browser": true
-    },
-    "parserOptions": {
-      "ecmaFeatures": {
-        "globalReturn": true,
-        "generators": false,
-        "objectLiteralDuplicateProperties": false,
-        "experimentalObjectRestSpread": true
-      },
-      "ecmaVersion": 2017,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "import"
-    ],
-    "settings": {
-      "import/core-modules": [],
-      "import/ignore": [
-        "node_modules",
-        "\\.(coffee|scss|css|less|hbs|svg|json)$"
-      ]
-    },
-    "rules": {
-      "no-console": 0,
-      "comma-dangle": [
-        "error",
-        {
-          "arrays": "always-multiline",
-          "objects": "always-multiline",
-          "imports": "always-multiline",
-          "exports": "always-multiline",
-          "functions": "ignore"
-        }
-      ]
-    }
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "prettier": "^2.4.0"
   }
 }

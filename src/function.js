@@ -9,13 +9,12 @@
 
 const throttle = (delay, fn) => {
   let inThrottle
-  return function() {
-    const args = arguments
+  return function (...args) {
     const context = this
     if (!inThrottle) {
       fn.apply(context, args)
       inThrottle = true
-      setTimeout(() => inThrottle = false, delay)
+      setTimeout(() => (inThrottle = false), delay)
     }
   }
 }
@@ -31,9 +30,8 @@ const throttle = (delay, fn) => {
 
 const debounce = (delay, fn) => {
   let inDebounce
-  return function() {
+  return function (...args) {
     const context = this
-    const args = arguments
     clearTimeout(inDebounce)
     inDebounce = setTimeout(() => fn.apply(context, args), delay)
   }
@@ -43,7 +41,4 @@ const debounce = (delay, fn) => {
   ------------------------------------------------------------------------------
 */
 
-export {
-  throttle,
-  debounce,
-}
+export { throttle, debounce }

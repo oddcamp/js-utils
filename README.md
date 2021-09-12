@@ -107,6 +107,28 @@ toggleClass(btn, "btn--green", true);
 toggleClass(".btn", "btn--disabled btn--grey");
 ```
 
+#### `containsAnyClass(element, classnames)`
+
+Check if an element contains at least one classname
+
+Examples:
+
+```js
+containsAnyClass(btn, "btn--green btn--disabled btn--grey");
+containsAnyClass(".btn", "btn--green btn--disabled btn--grey");
+```
+
+#### `containsAllClasses(element, classnames)`
+
+Check if an element contains all classnames
+
+Examples:
+
+```js
+containsAllClasses(btn, "btn--green btn--disabled btn--grey");
+containsAllClasses(".btn", "btn--green btn--disabled btn--grey");
+```
+
 ### [_cookie.js_](https://github.com/oddcamp/js-utils/blob/master/src/cookie.js)
 
 #### `getCookieValue(name)`
