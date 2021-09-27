@@ -196,7 +196,7 @@ removeEventListener(btn, false, false, { passive: false }); // removes all event
 
 #### `triggerEvent(elements, eventNames [, data = null])`
 
-Triggers the event(s). `data` — data to pass to the event handler (`(e) => {e.detail}`). Doesn't work with `click|focus|blur` events.
+Triggers the event(s). `data` — data to pass to the event handler (`(e) => {e.detail}`). Data passing doesn't yet work with `click|focus|blur` events.
 
 Examples:
 
