@@ -190,7 +190,7 @@ const triggerEvent = (elements, eventNames, data = null) => {
       const [eventNameType, eventNameSpace] = eventName.split(`.`)
       let eventTriggered = false
 
-      // trigger registered events
+      // trigger registered event
       // eslint-disable-next-line no-prototype-builtins
       if (element.hasOwnProperty(`registeredEvents`)) {
         const eventsTriggered = []
@@ -230,13 +230,19 @@ const triggerEvent = (elements, eventNames, data = null) => {
         })
       }
 
-      // still trigger native event if it wasn't registered before
-      if (
-        !eventTriggered &&
-        eventNameType &&
-        nativeEvents.includes(eventNameType)
-      ) {
-        element[eventNameType]()
+      // trigger non-registered event
+      if (!eventTriggered && eventNameType) {
+        // trigger native event
+        if (nativeEvents.includes(eventNameType)) {
+          element[eventNameType]()
+        }
+        // trigger custom event
+        else {
+          const event = new CustomEvent(eventNameType, {
+            detail: data,
+          })
+          element.dispatchEvent(event)
+        }
       }
     })
   })
