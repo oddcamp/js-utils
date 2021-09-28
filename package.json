@@ -1,15 +1,14 @@
 {
   "name": "@oddcamp/js-utils",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Odd Camp's JavaScript utilities",
   "license": "MIT",
   "author": "Odd Camp",
   "main": "",
-  "engines": {
-    "node": ">=8.0.0"
-  },
   "scripts": {
-    "dev": "gulp",
+    "dev": "concurrently --kill-others \"yarn demo\" \"yarn watch\"",
+    "demo": "node ./server.js",
+    "watch": "esw ./src --watch --color",
     "lint-js": "eslint ./src --ext js",
     "format-js": "eslint ./src --ext js --fix"
   },
@@ -22,26 +21,23 @@
   },
   "homepage": "https://github.com/oddcamp/js-utils#readme",
   "devDependencies": {
-    "child_process": "^1.0.2",
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^6.2.2",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-filenames": "^1.3.2",
-    "eslint-plugin-flowtype": "^6.0.1",
-    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-flowtype": "^6.1.0",
+    "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-html-erb": "^1.0.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-watch": "^7.0.0",
     "express": "^4.17.1",
-    "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0",
-    "gulp-spawn": "^1.0.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "prettier": "^2.4.1"
   },
-  "dependencies": {
-    "babel-eslint": "^10.1.0",
-    "prettier": "^2.4.0"
-  }
+  "dependencies": {}
 }
