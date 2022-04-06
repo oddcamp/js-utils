@@ -22,7 +22,7 @@
   "homepage": "https://github.com/oddcamp/js-utils#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "concurrently": "^6.2.2",
+    "concurrently": "^7.1.0",
     "eslint": "^8.2.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
